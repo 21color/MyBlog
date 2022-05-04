@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="레이어_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 2600"
+	 style="enable-background:new 0 0 1440 2600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#84C35F;stroke-miterlimit:10;}
+</style>
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="2740.4" width="1440.9" x="-0.5" y="-2669.9"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<path class="st0" d="M737.5-70.5"/>
+<path class="st0" d="M601.9,401.5c2.9-91.2-63.3-166.4-142.2-172c-103.9-7.3-176.4,109.6-161.5,176c22.7,100.9,256,124.7,280.7,76
+	c17.4-34.5-56.6-131.5-149.9-156c-118.3-31-253.4,58.3-257.6,136c-4.7,87.2,155.5,159.4,357.5,248c54.7,24,598.3,262.5,642,176
+	c33.2-65.7-190.3-382-461.3-336c-246.1,41.7-393.5,358.8-326.8,480c80.8,146.7,488,29.4,495.9,76c7.9,46-384.1,194.2-411.4,140
+	c-20.5-40.8,145.7-235.2,346-236c190.8-0.7,384.7,174.4,376.8,320c-12.6,229.7-531.6,453.5-876.6,332
+	c-15.7-5.5-188.6-66.4-184.5-136c2.9-49.9,96.3-96.4,180.7-104c162.4-14.7,306.1,113,511.3,300c105.1,95.8,104,109.9,161.5,144
+	c190.5,113.1,431.8,94.4,442.1,48c8.4-37.8-129.2-125.7-269.1-152c-246.8-46.4-553.8,88.5-715.1,320
+	c-93.9,134.7-104.3,253.2-215.3,288c-96,30.1-219.2-17.5-224.9-68c-9.8-86.9,318.6-260.7,520.9-192c33.4,11.3,167.4,64.6,273,108
+	c34.2,14.1,32.5,13.6,48.1,19.9c201.9,82.2,353.6,111.7,351.7,124.1c-3.2,20.9-432.7-76.6-476.7,32c-13.5,33.3,4.3,98.5,42.3,136
+	c21.8,21.5,45.4,29.3,50.9,31c79.1,24.6,133.4-50.5,187.4-27c37.1,16.1,63.5,74.1,50,96c-49,79.7-699.4-194-680.5-276
+	c16.9-73.4,592.2-87.8,995.7,246c31.1,25.7,56.8,49.9,76.9,70"/>
+</svg>

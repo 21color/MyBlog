@@ -1,0 +1,2714 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.notosanskr * {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+@font-face {
+  font-family: 'YdestreetL';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetL.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTTogether';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YdestreetB';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InfinitySans-RegularA1';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Middleschool_student';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Middleschool_student.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SangSangShinb7';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.1/SangSangShinb7.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes imagesize {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes imagesize {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  background: ivory;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  font-family: 'GmarketSansBold';
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 10px;
+  text-rendering: optimizeSpeed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html ul,
+html li,
+body ul,
+body li {
+  list-style: none;
+}
+
+@media screen and (min-width: 2580px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 5px;
+  }
+  .mysection {
+    width: 768px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 2.5px;
+  }
+  .mysection {
+    width: 480px;
+  }
+}
+
+.mysvg,
+.st0 {
+  stroke-dasharray: 300;
+  fill: none;
+  stroke: url(#svg_gradient);
+  stroke-width: 2.5;
+  stroke-miterlimit: 10;
+  position: absolute;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.stop1 {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  stop-color: #48f5c4;
+}
+
+.stop2 {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  stop-color: #fff375;
+}
+
+.stop3 {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  stop-color: #ffa9a4;
+}
+
+.stop4 {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  stop-color: #8a7bff;
+}
+
+.portFolio {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portFolio .doorwapper {
+  width: 100%;
+  height: 72rem;
+  padding-bottom: 20rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portFolio .fa-solid.fa-angles-down {
+  position: absolute;
+  display: inline-block;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 4rem;
+  -webkit-transform: translate(50rem, 30rem);
+          transform: translate(50rem, 30rem);
+  animation: scrollplz 3s linear infinite reverse;
+  color: #c980ab;
+}
+
+@-webkit-keyframes scrollplz {
+  0% {
+    -webkit-transform: translate(50rem, 30rem);
+            transform: translate(50rem, 30rem);
+  }
+  50% {
+    -webkit-transform: translate(50rem, 27rem);
+            transform: translate(50rem, 27rem);
+  }
+  100% {
+    -webkit-transform: translate(50rem, 30rem);
+            transform: translate(50rem, 30rem);
+  }
+}
+
+@keyframes scrollplz {
+  0% {
+    -webkit-transform: translate(50rem, 30rem);
+            transform: translate(50rem, 30rem);
+  }
+  50% {
+    -webkit-transform: translate(50rem, 27rem);
+            transform: translate(50rem, 27rem);
+  }
+  100% {
+    -webkit-transform: translate(50rem, 30rem);
+            transform: translate(50rem, 30rem);
+  }
+}
+
+.portFolio .selectmenubox {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 60rem;
+  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  z-index: 10;
+  padding: 1rem;
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.206);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border: 0.1rem solid white;
+}
+
+.portFolio .selectmenubox span {
+  background: linear-gradient(30deg, #6563f6, #f4d36f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: left;
+  z-index: 100;
+  margin: 1rem;
+  letter-spacing: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: transparent;
+  font-family: 'GmarketSansBold';
+  position: relative;
+}
+
+.portFolio .selectmenubox span:hover {
+  background: linear-gradient(80deg, #ff7f43 0%, #fcdb7b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.portFolio .hanatitle {
+  background: linear-gradient(80deg, #ff7f43 0%, #fcdb7b 100%);
+  letter-spacing: 1rem;
+  position: absolute;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-transform: translate(-40rem);
+          transform: translate(-40rem);
+  padding: 5%;
+  font-size: 5rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.portFolio .maintitle {
+  position: absolute;
+  letter-spacing: 1rem;
+  font-size: 5rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -webkit-transform: translate(10rem, 5rem);
+          transform: translate(10rem, 5rem);
+  color: #7efec2;
+}
+
+.portFolio .openRoom {
+  width: 100%;
+  height: 72rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portFolio .openRoom .myDoorhandle {
+  background: #6957ed;
+  width: 32rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 30rem;
+  border-radius: 1rem 1rem 15rem 1rem;
+  -webkit-box-shadow: 0rem 0rem 4rem #422eda;
+          box-shadow: 0rem 0rem 4rem #422eda;
+  text-align: center;
+}
+
+.portFolio .openRoom .myDoorhandle .openTheDoor {
+  font-size: 2rem;
+  letter-spacing: .4rem;
+  line-height: 12rem;
+  color: ivory;
+  text-shadow: 0rem 0rem 1rem #422eda;
+}
+
+@-webkit-keyframes focusdoor {
+  0% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+  25% {
+    -webkit-box-shadow: 2rem -2rem 6rem rgba(253, 240, 153, 0.856);
+            box-shadow: 2rem -2rem 6rem rgba(253, 240, 153, 0.856);
+  }
+  50% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+  75% {
+    -webkit-box-shadow: 2rem -2rem 6rem rgba(153, 253, 250, 0.856);
+            box-shadow: 2rem -2rem 6rem rgba(153, 253, 250, 0.856);
+  }
+  100% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+}
+
+@keyframes focusdoor {
+  0% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+  25% {
+    -webkit-box-shadow: 2rem -2rem 6rem rgba(253, 240, 153, 0.856);
+            box-shadow: 2rem -2rem 6rem rgba(253, 240, 153, 0.856);
+  }
+  50% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+  75% {
+    -webkit-box-shadow: 2rem -2rem 6rem rgba(153, 253, 250, 0.856);
+            box-shadow: 2rem -2rem 6rem rgba(153, 253, 250, 0.856);
+  }
+  100% {
+    -webkit-box-shadow: .5rem -1rem 3rem #546989c1;
+            box-shadow: .5rem -1rem 3rem #546989c1;
+  }
+}
+
+.portFolio .openRoom .myDoorhandle .show {
+  opacity: 1;
+}
+
+.portFolio .openRoom .myDoorhandle .mydoorhandleBtn {
+  border: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 7rem;
+  -webkit-box-shadow: 1rem -1rem 4rem rgba(119, 181, 181, 0.856);
+          box-shadow: 1rem -1rem 4rem rgba(119, 181, 181, 0.856);
+  border-radius: 1rem;
+  background: #eaead2;
+  margin-left: -5rem;
+  -webkit-transform: translate(-7rem, 3rem);
+          transform: translate(-7rem, 3rem);
+  height: 7rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.portFolio .openRoom .myDoorhandle .mydoorhandleBtn .key {
+  display: inline-block;
+  position: absolute;
+  width: 10rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-1rem, -1.5rem);
+          transform: translate(-1rem, -1.5rem);
+  border-radius: 2rem;
+  -webkit-box-shadow: -0.5rem -1rem 3rem #546989c1;
+          box-shadow: -0.5rem -1rem 3rem #546989c1;
+  height: 3rem;
+  background: ivory;
+  display: inline-block;
+  animation: focusdoor 2s infinite reverse;
+}
+
+.portFolio .openRoom .handleofRoom {
+  position: absolute;
+  width: 37rem;
+  height: 50rem;
+  -webkit-filter: blur(0.5rem);
+          filter: blur(0.5rem);
+  opacity: 0.5;
+  -webkit-transform: translate(-8rem, 5rem) rotate(5deg);
+          transform: translate(-8rem, 5rem) rotate(5deg);
+  background: -webkit-gradient(linear, left top, right top, from(salmon), to(yellow));
+  background: linear-gradient(90deg, salmon, yellow);
+  animation: borderradius 3s linear infinite reverse;
+}
+
+.portFolio .openRoom .handleofRoom2 {
+  position: absolute;
+  width: 15rem;
+  border-radius: 2rem;
+  -webkit-transform: translate(24rem) rotate(50deg);
+          transform: translate(24rem) rotate(50deg);
+  height: 15rem;
+  -webkit-filter: blur(0.5rem);
+          filter: blur(0.5rem);
+  background-image: linear-gradient(135deg, #6dffaf 10%, #58cffb 100%);
+}
+
+.portFolio .openRoom .bubble {
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+}
+
+.portFolio .openRoom .bubble:nth-child(1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(salmon), to(yellow));
+  background: linear-gradient(salmon, yellow);
+  animation: borderradius 3s linear infinite reverse;
+  -webkit-transform: translate(-20rem);
+          transform: translate(-20rem);
+  -webkit-box-shadow: 0rem 0rem 10rem rgba(255, 144, 104, 0.525);
+          box-shadow: 0rem 0rem 10rem rgba(255, 144, 104, 0.525);
+}
+
+.portFolio .openRoom .bubble:nth-child(2) {
+  background: radial-gradient(circle, violet, #9dfcff);
+  width: 60rem;
+  height: 10rem;
+  -webkit-transform: translate(-10rem, 15rem) rotate(-15deg);
+          transform: translate(-10rem, 15rem) rotate(-15deg);
+  border-radius: 2rem;
+  -webkit-box-shadow: 0rem 0rem 10rem #9bf6f9;
+          box-shadow: 0rem 0rem 10rem #9bf6f9;
+}
+
+.portFolio .openRoom .bubble:nth-child(3) {
+  -webkit-box-shadow: 0rem 2rem 4rem #c9ffb4;
+          box-shadow: 0rem 2rem 4rem #c9ffb4;
+  background-image: linear-gradient(135deg, #fff720 10%, #3cd500 100%);
+  height: 8rem;
+  width: 8rem;
+  border-radius: 2rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  animation: dutationball 4s ease-in infinite reverse;
+}
+
+.portFolio .openRoom .bubble:nth-child(4) {
+  font-size: 10rem;
+  width: 30rem;
+  -webkit-transform: translate(-50rem, 35rem) rotate(60deg);
+          transform: translate(-50rem, 35rem) rotate(60deg);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #f5b4ff), to(#f067b4));
+  background-image: linear-gradient(90deg, #f5b4ff 10%, #f067b4 100%);
+  text-shadow: 0rem 1rem 3rem #efb4ff85;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@-webkit-keyframes dutationball {
+  0% {
+    -webkit-transform: translate(-40rem, -5rem);
+            transform: translate(-40rem, -5rem);
+    border-radius: 2rem;
+  }
+  25% {
+    -webkit-transform: translate(5rem, 0rem);
+            transform: translate(5rem, 0rem);
+    border-radius: 10rem;
+  }
+  50% {
+    -webkit-transform: translate(-50rem, 10rem);
+            transform: translate(-50rem, 10rem);
+    border-radius: 50%;
+  }
+  100% {
+    -webkit-transform: translate(-40rem, -5rem);
+            transform: translate(-40rem, -5rem);
+    border-radius: 2rem;
+  }
+}
+
+@keyframes dutationball {
+  0% {
+    -webkit-transform: translate(-40rem, -5rem);
+            transform: translate(-40rem, -5rem);
+    border-radius: 2rem;
+  }
+  25% {
+    -webkit-transform: translate(5rem, 0rem);
+            transform: translate(5rem, 0rem);
+    border-radius: 10rem;
+  }
+  50% {
+    -webkit-transform: translate(-50rem, 10rem);
+            transform: translate(-50rem, 10rem);
+    border-radius: 50%;
+  }
+  100% {
+    -webkit-transform: translate(-40rem, -5rem);
+            transform: translate(-40rem, -5rem);
+    border-radius: 2rem;
+  }
+}
+
+.portFolio .openRoom .mydoor {
+  z-index: 100;
+  background: linear-gradient(10deg, #5943ff, #685bcd);
+  width: 45rem;
+  border-radius: 15rem 15rem 1rem 1rem;
+  height: 65rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0rem 3rem 8rem #9e9e7d;
+          box-shadow: 0rem 3rem 8rem #9e9e7d;
+}
+
+.portFolio .openRoom .mydoor .mydoor--in {
+  width: 85%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+  background: linear-gradient(30deg, #5943ff, #685bcd);
+  -webkit-box-shadow: 1rem 0rem 4rem #422eda;
+          box-shadow: 1rem 0rem 4rem #422eda;
+  border-radius: 14rem 14rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portFolio .openRoom .mydoor .mydoor--in .nameCard {
+  background: ivory;
+  -webkit-box-shadow: 0rem 0rem 5rem rgba(164, 232, 225, 0.659);
+          box-shadow: 0rem 0rem 5rem rgba(164, 232, 225, 0.659);
+  width: 30rem;
+  height: 17rem;
+  border-radius: 11rem 11rem 1rem 1rem;
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+  justify-self: flex-start;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.portFolio .openRoom .mydoor .mydoor--in .nameCard .myline {
+  display: inline-block;
+  position: absolute;
+  -webkit-filter: blur(0.2rem);
+          filter: blur(0.2rem);
+  width: 60rem;
+  z-index: -1;
+}
+
+.mouseChoseinformation {
+  z-index: 100;
+  width: 35rem;
+  overflow: visible;
+  -webkit-box-shadow: inset 0rem 2rem 10rem #ffe0d8, 0rem 2rem 8rem #c8c1b6ba;
+          box-shadow: inset 0rem 2rem 10rem #ffe0d8, 0rem 2rem 8rem #c8c1b6ba;
+  height: 28rem;
+  background-color: #74EBD5;
+  background-image: -webkit-gradient(linear, left top, right top, from(#81f0f3), to(#b8a3fe));
+  background-image: linear-gradient(90deg, #81f0f3 0%, #b8a3fe 100%);
+  border-bottom: .1rem solid #b8a3fe;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translate(15rem, 37rem) rotate(-30deg);
+          transform: translate(15rem, 37rem) rotate(-30deg);
+  border-radius: 30rem 38rem 35rem 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mouseChoseinformation .mousebody {
+  width: 40%;
+}
+
+.mouseChoseinformation .mouseclickarea {
+  -webkit-transform: translate(0rem, -0.5rem);
+          transform: translate(0rem, -0.5rem);
+  border-radius: 3rem 15rem 15rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  height: 90%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: transparent;
+}
+
+.mouseChoseinformation .mouseclickarea button {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  height: 46%;
+  margin-bottom: .3rem;
+  cursor: pointer;
+  font-family: "GmarketSansBold";
+  letter-spacing: .4rem;
+  -webkit-box-shadow: inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.664);
+          box-shadow: inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.664);
+  background: rgba(255, 255, 240, 0.459);
+  font-size: 2rem;
+}
+
+.mouseChoseinformation .mouseclickarea button:first-child {
+  border-radius: 9rem 15rem 0rem 1rem;
+}
+
+.mouseChoseinformation .mouseclickarea button:first-child span {
+  color: white;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.mouseChoseinformation .mouseclickarea button:last-child {
+  border-radius: 1rem 0rem 15rem 9rem;
+}
+
+.mouseChoseinformation .mouseclickarea .mouseup::after {
+  content: '';
+  position: absolute;
+  width: 6.5rem;
+  height: 3rem;
+  -webkit-transform: translate(-3rem, 4.5rem);
+          transform: translate(-3rem, 4.5rem);
+  border-radius: 10rem;
+  background: ivory;
+  z-index: 100;
+  -webkit-box-shadow: -.5rem .2rem 2rem #b8a3fe5d;
+          box-shadow: -.5rem .2rem 2rem #b8a3fe5d;
+}
+
+.mycircle {
+  position: absolute;
+  opacity: 0;
+  -webkit-box-shadow: 0rem 2rem 8rem #ffe5ba79;
+          box-shadow: 0rem 2rem 8rem #ffe5ba79;
+  border: none;
+  -webkit-animation: slame 3s linear infinite both alternate;
+          animation: slame 3s linear infinite both alternate;
+  font-family: "GmarketSansBold";
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #FF9A8B;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF9A8B), color-stop(55%, #FF6A88), to(#FF99AC));
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  -webkit-transform: translate(-60rem, -10rem);
+          transform: translate(-60rem, -10rem);
+  width: 21rem;
+  height: 21rem;
+  border-radius: 10rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes slame {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 41% 31% 44% 42% / 39% 28% 37% 24%;
+  }
+  50% {
+    border-radius: 30% 70% 44% 56% / 30% 64% 36% 70%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+@keyframes slame {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 41% 31% 44% 42% / 39% 28% 37% 24%;
+  }
+  50% {
+    border-radius: 30% 70% 44% 56% / 30% 64% 36% 70%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+.mycircle:hover {
+  -webkit-box-shadow: 0rem 2rem 8rem #b0fff2ba;
+          box-shadow: 0rem 2rem 8rem #b0fff2ba;
+}
+
+.introducecircle {
+  font-size: 2.5rem;
+  display: inline-block;
+  text-align: left;
+  letter-spacing: 0.3rem;
+  color: ivory;
+}
+
+.BigRoom {
+  -webkit-perspective: 60rem;
+          perspective: 60rem;
+  width: 100rem;
+  height: 68rem;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-box-shadow: 0rem 2rem 8rem #ffe4baba;
+          box-shadow: 0rem 2rem 8rem #ffe4baba;
+  background: #f6ff4c;
+  background: radial-gradient(circle, #ff8a37 0%, #f6ff4c 100%);
+  -webkit-perspective-origin: top right;
+          perspective-origin: top right;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translate(3rem, 2rem) rotateY(-10deg);
+          transform: translate(3rem, 2rem) rotateY(-10deg);
+  animation: borderradius 3.5s linear infinite reverse;
+}
+
+@-webkit-keyframes borderradius {
+  0% {
+    border-radius: 60rem 40rem 40rem 30rem;
+  }
+  25% {
+    border-radius: 15rem 25rem 20rem 30rem;
+  }
+  50% {
+    border-radius: 30rem 40rem 50rem 20rem;
+  }
+  100% {
+    border-radius: 60rem 40rem 40rem 30rem;
+  }
+}
+
+@keyframes borderradius {
+  0% {
+    border-radius: 60rem 40rem 40rem 30rem;
+  }
+  25% {
+    border-radius: 15rem 25rem 20rem 30rem;
+  }
+  50% {
+    border-radius: 30rem 40rem 50rem 20rem;
+  }
+  100% {
+    border-radius: 60rem 40rem 40rem 30rem;
+  }
+}
+
+.myRoomonTop {
+  width: 90rem;
+  height: 60rem;
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+  -webkit-transform: translate(15rem, 10rem) rotate(5deg);
+          transform: translate(15rem, 10rem) rotate(5deg);
+}
+
+.myRoom {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.myRoom--front {
+  background: #ffffff41;
+  -webkit-backdrop-filter: blur(0.6rem);
+          backdrop-filter: blur(0.6rem);
+  border-radius: 0rem 1rem 1rem 0rem;
+  width: 90rem;
+  height: 80rem;
+  -webkit-transform: translate(25rem, -92rem);
+          transform: translate(25rem, -92rem);
+  position: relative;
+}
+
+.myRoom--front .bookstreet {
+  width: 25rem;
+  height: 30rem;
+  position: absolute;
+  opacity: .7;
+  background: ivory;
+  border-radius: 0.5 rem;
+  -webkit-transform: translate(8rem, 30rem) rotate(5deg);
+          transform: translate(8rem, 30rem) rotate(5deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.myRoom--front .bookstreet .postit {
+  width: 5rem;
+  height: 6rem;
+  position: absolute;
+  -webkit-transform: translate(-1rem, 10rem) rotate(10deg);
+          transform: translate(-1rem, 10rem) rotate(10deg);
+  border-radius: 50%;
+}
+
+.myRoom--front .bookstreet .postit:nth-child(2) {
+  background: #ecfdbcd1;
+  -webkit-transform: translate(10rem, 28rem) rotate(-5deg);
+          transform: translate(10rem, 28rem) rotate(-5deg);
+  border-radius: 0.1rem;
+}
+
+.myRoom--front .bookstreet .clip {
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  background: linear-gradient(10deg, #bfffac, #86ffb4a7);
+  -webkit-transform: translate(5rem, -2rem);
+          transform: translate(5rem, -2rem);
+}
+
+.myRoom--left {
+  width: 20rem;
+  height: 70rem;
+  position: relative;
+  background: #fc3dd35a;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: rotateY(40deg) translate(3.5rem, -10rem);
+          transform: rotateY(40deg) translate(3.5rem, -10rem);
+}
+
+.myRoom--left .mypictureintro {
+  width: 10rem;
+  height: 30rem;
+  background: ivory;
+  border-radius: 20rem 20rem 0rem 0rem;
+  -webkit-transform: translate(8rem, 22rem);
+          transform: translate(8rem, 22rem);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.myRoom--left .mypictureintro .leftdoormypictureintro {
+  opacity: .7;
+  background: #fffcf0;
+  -webkit-transform: translate(0.5rem);
+          transform: translate(0.5rem);
+  padding: 0.5rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: cover;
+  background-position: calc(30%);
+  -webkit-box-shadow: 0rem 2rem 4rem #eeb899;
+          box-shadow: 0rem 2rem 4rem #eeb899;
+  height: 80%;
+  border-radius: 15rem 1rem 1rem 1rem;
+}
+
+.myRoom--left .mypictureintro .leftdoormypictureintro .whos_hana {
+  font-size: 2rem;
+  color: #83cd5b;
+  letter-spacing: .2rem;
+  line-height: 3rem;
+}
+
+.myRoom--left .myroomleftdraw {
+  width: 19rem;
+  height: 20rem;
+  background: #ff9671;
+  -webkit-box-shadow: -2rem -3rem 7rem rgba(250, 250, 99, 0.715);
+          box-shadow: -2rem -3rem 7rem rgba(250, 250, 99, 0.715);
+  -webkit-transform: translate(1.5rem, 24rem);
+          transform: translate(1.5rem, 24rem);
+}
+
+.myclosetRoom {
+  width: 40rem;
+  height: 30rem;
+  position: absolute;
+  -webkit-transform: translate(60rem, 50rem);
+          transform: translate(60rem, 50rem);
+  border-radius: 1rem 1rem 0rem 0rem;
+  -webkit-box-shadow: 0rem -1rem 5rem #f89b83;
+          box-shadow: 0rem -1rem 5rem #f89b83;
+  background: #c08dff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.myclosetRoom .myclosetroomdoor--right {
+  width: 42%;
+  height: 90%;
+  -webkit-transform: translate(-10rem);
+          transform: translate(-10rem);
+  background: rgba(230, 210, 255, 0.826);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0rem 0rem 1rem #a26fe1;
+          box-shadow: 0rem 0rem 1rem #a26fe1;
+}
+
+@-webkit-keyframes door {
+  0% {
+    -webkit-transform: translate(-10rem);
+            transform: translate(-10rem);
+  }
+  50% {
+    -webkit-transform: translate(-5rem);
+            transform: translate(-5rem);
+  }
+  100% {
+    -webkit-transform: translate(-10rem);
+            transform: translate(-10rem);
+  }
+}
+
+@keyframes door {
+  0% {
+    -webkit-transform: translate(-10rem);
+            transform: translate(-10rem);
+  }
+  50% {
+    -webkit-transform: translate(-5rem);
+            transform: translate(-5rem);
+  }
+  100% {
+    -webkit-transform: translate(-10rem);
+            transform: translate(-10rem);
+  }
+}
+
+.myclosetRoom .myclosetroomdoor--left {
+  width: 42%;
+  height: 88%;
+  overflow: hidden;
+  background: rgba(255, 232, 104, 0.762);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: inset 0rem 0rem 1rem #622aa6;
+          box-shadow: inset 0rem 0rem 1rem #622aa6;
+}
+
+.myclosetRoom .handel {
+  width: 5rem;
+  height: 2rem;
+  background: #e9d8ff;
+  -webkit-transform: translate(2rem, 12rem);
+          transform: translate(2rem, 12rem);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0rem 0rem 2rem rgba(121, 60, 196, 0.467);
+          box-shadow: 0rem 0rem 2rem rgba(121, 60, 196, 0.467);
+  display: inline-block;
+}
+
+.myinformation::before {
+  content: '';
+  width: 10rem;
+  height: 5rem;
+  background: #bfffacc1;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  -webkit-transform: translate(-10rem, -3rem) rotate(-3deg);
+          transform: translate(-10rem, -3rem) rotate(-3deg);
+}
+
+.myinformation::after {
+  content: '';
+  padding: 2rem;
+  font-family: "GmarketSansMedium";
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translate(10rem, 25rem) rotate(-5deg);
+          transform: translate(10rem, 25rem) rotate(-5deg);
+  background: rgba(234, 254, 180, 0.54);
+  border-radius: .5rem;
+}
+
+.myinformation {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  width: 10rem;
+  overflow: hidden;
+  border: .1rem solid ivory;
+  height: 10rem;
+  background: rgba(255, 255, 240, 0.598);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  -webkit-transform: translate(70rem, -15rem) rotate(3deg);
+          transform: translate(70rem, -15rem) rotate(3deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  color: #4e4846;
+  -webkit-transition: .5s;
+  transition: .5s;
+  letter-spacing: .3rem;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: -0.5rem 1rem 2.5rem rgba(238, 177, 140, 0.495);
+          box-shadow: -0.5rem 1rem 2.5rem rgba(238, 177, 140, 0.495);
+  z-index: 200;
+}
+
+.myinformation.info {
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+}
+
+.myinformation.info .infoimg {
+  width: 25rem;
+  height: 25rem;
+  -webkit-transform: translate(3rem, -3rem);
+          transform: translate(3rem, -3rem);
+  background: url("../img/IMG_9709.JPG");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-box-shadow: -0.5rem 1.5rem 4rem #a48b8b;
+          box-shadow: -0.5rem 1.5rem 4rem #a48b8b;
+  border-radius: 50%;
+}
+
+.myinformation.info .infoimg::after {
+  position: absolute;
+  font-size: 4rem;
+  -webkit-transform: translate(25rem) rotate(-15deg);
+          transform: translate(25rem) rotate(-15deg);
+  border-radius: 50%;
+}
+
+.myinformation .infoultag {
+  font-family: "GmarketSansMedium";
+  -webkit-transform: translate(0rem, -2rem);
+          transform: translate(0rem, -2rem);
+}
+
+.myinformation .infoultag .info_name {
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  font-family: "GmarketSansBold";
+  padding: 2rem;
+}
+
+.myinformation .infoultag .info_name::before {
+  content: '🐤';
+}
+
+.myinformation .infoultag li {
+  font-size: 1.5rem;
+  margin: .2rem;
+}
+
+.myNameIsHana {
+  width: 60rem;
+  height: 50rem;
+  border-radius: 10rem;
+  text-align: center;
+  -webkit-transform: translate(10rem, 35rem);
+          transform: translate(10rem, 35rem);
+}
+
+@-webkit-keyframes headmoving {
+  0% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+
+@keyframes headmoving {
+  0% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+
+.myNameIsHana .moniter {
+  width: 40rem;
+  height: 20rem;
+  position: absolute;
+  background: #ffffff7b;
+  z-index: 100;
+  border-radius: 2rem;
+  -webkit-transform: translate(0rem, 30rem) rotate3d(6, 1, 1, 5deg);
+          transform: translate(0rem, 30rem) rotate3d(6, 1, 1, 5deg);
+}
+
+.myNameIsHana .hanaS__Header {
+  z-index: 10;
+  animation: headmoving 3s linear infinite reverse;
+  position: relative;
+  display: inline-block;
+  width: 40rem;
+  height: 30rem;
+}
+
+.myNameIsHana .hanaS__Header .headSetbody {
+  z-index: 150;
+  width: 27rem;
+  height: 14rem;
+  position: absolute;
+  background: transparent;
+  border-radius: 10rem 15rem 0rem 0rem;
+  -webkit-transform: translate(0rem, 0rem) rotate(6deg);
+          transform: translate(0rem, 0rem) rotate(6deg);
+  border-top: 3rem solid #dadada;
+}
+
+.myNameIsHana .hanaS__Header .headSet {
+  position: absolute;
+  width: 9rem;
+  z-index: 200;
+  -webkit-box-shadow: 0rem 0rem 1rem rgba(103, 80, 80, 0.528);
+          box-shadow: 0rem 0rem 1rem rgba(103, 80, 80, 0.528);
+  -webkit-transform: translate(20rem, 8rem) rotate(-5deg);
+          transform: translate(20rem, 8rem) rotate(-5deg);
+  height: 10rem;
+  background: #dadada;
+  border-radius: 40%;
+}
+
+.myNameIsHana .hanaS__Header .headSet .headSet_logo {
+  width: 7.6rem;
+  height: 8.6rem;
+  text-align: center;
+  line-height: 8.5rem;
+  font-size: 1.2rem;
+  color: #c0c0c0;
+  background: #f6f6f6;
+  -webkit-transform: translate(2rem, 1rem);
+          transform: translate(2rem, 1rem);
+  border-radius: 40%;
+  font-family: 'YdestreetB';
+  letter-spacing: 0.2rem;
+}
+
+.myNameIsHana .hanaS__Header .headSet2 {
+  position: absolute;
+  width: 9rem;
+  -webkit-transform: translate(-2rem, 8rem);
+          transform: translate(-2rem, 8rem);
+  height: 10rem;
+  background: #bfc7ca;
+  border-radius: 40%;
+}
+
+.myNameIsHana .hanaS__Header .header__backHair {
+  width: 15rem;
+  height: 30rem;
+  background: #343241;
+  border-radius: 20rem 40rem 10rem 50rem;
+  position: absolute;
+  -webkit-transform: translate(20rem, -10rem) rotate(-15deg);
+          transform: translate(20rem, -10rem) rotate(-15deg);
+}
+
+.myNameIsHana .hanaS__Header .header__head {
+  -webkit-box-shadow: 1em 1rem 8rem rgba(172, 82, 47, 0.813);
+          box-shadow: 1em 1rem 8rem rgba(172, 82, 47, 0.813);
+  position: absolute;
+  z-index: 100;
+  width: 28rem;
+  height: 26rem;
+  background: #ffe0d8;
+  border-radius: 10rem 10rem 20rem 14rem;
+}
+
+.myNameIsHana .hanaS__Header .header__head .header__Hair {
+  width: 30rem;
+  height: 17rem;
+  -webkit-transform: translate(-1rem, -5rem);
+          transform: translate(-1rem, -5rem);
+  background: #343241;
+  border-radius: 14rem 13rem 0rem 1rem;
+}
+
+.myNameIsHana .hanaS__Header .header__head .eyehole {
+  width: 5.5rem;
+  height: 3.5rem;
+  background: transparent;
+  position: absolute;
+  -webkit-transform: translate(-0.1rem, -0.1rem);
+          transform: translate(-0.1rem, -0.1rem);
+  z-index: 100;
+  border-top: 1rem solid #fbd7c3;
+  border-radius: 2rem 3rem 0rem 0rem;
+  animation: eyeholemoving 2s ease-in-out infinite reverse;
+}
+
+.myNameIsHana .hanaS__Header .header__head .eyehole.left {
+  -webkit-transform: translate(2.8rem, -4rem);
+          transform: translate(2.8rem, -4rem);
+}
+
+.myNameIsHana .hanaS__Header .header__head .eyehole.right {
+  -webkit-transform: translate(10.9rem, -9rem);
+          transform: translate(10.9rem, -9rem);
+}
+
+.myNameIsHana .hanaS__Header .header__head .eye_zum {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #2a2932;
+  -webkit-transform: translate(15rem, -10rem);
+          transform: translate(15rem, -10rem);
+  font-family: 'SangSangShinb7';
+}
+
+.myNameIsHana .hanaS__Header .header__head .eye_zum_lip {
+  position: absolute;
+  font-size: 2rem;
+  font-family: 'SangSangShinb7';
+  color: #2a2932;
+  -webkit-transform: translate(8rem, -9rem);
+          transform: translate(8rem, -9rem);
+}
+
+.myNameIsHana .hanaS__Header .header__head .head_in_eye {
+  -webkit-box-shadow: 0.4rem 0rem 0.1rem #ffe0d8;
+          box-shadow: 0.4rem 0rem 0.1rem #ffe0d8;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15rem 20rem 15rem 20rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d9e7e7), color-stop(40%, white));
+  background: linear-gradient(#d9e7e7, white 40%);
+  -webkit-transform: translate(3rem, -4rem);
+          transform: translate(3rem, -4rem);
+}
+
+@-webkit-keyframes eyeholemoving {
+  0% {
+    border-top: 1rem solid #fdcabc;
+  }
+  20% {
+    border-top: 0.8rem solid #fdcabc;
+  }
+  50% {
+    border-top: 1.5rem solid #fdcabc;
+  }
+  70% {
+    border-top: 0.8rem solid #fdcabc;
+  }
+  100% {
+    border-top: 1rem solid #fdcabc;
+  }
+}
+
+@keyframes eyeholemoving {
+  0% {
+    border-top: 1rem solid #fdcabc;
+  }
+  20% {
+    border-top: 0.8rem solid #fdcabc;
+  }
+  50% {
+    border-top: 1.5rem solid #fdcabc;
+  }
+  70% {
+    border-top: 0.8rem solid #fdcabc;
+  }
+  100% {
+    border-top: 1rem solid #fdcabc;
+  }
+}
+
+@-webkit-keyframes eyemoving {
+  0% {
+    -webkit-transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+            transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+  }
+  25% {
+    -webkit-transform: translate(0rem, 0.7rem) rotate(-10deg);
+            transform: translate(0rem, 0.7rem) rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: translate(1rem, 0.7rem) rotate(-10deg);
+            transform: translate(1rem, 0.7rem) rotate(-10deg);
+  }
+}
+
+@keyframes eyemoving {
+  0% {
+    -webkit-transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+            transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+  }
+  25% {
+    -webkit-transform: translate(0rem, 0.7rem) rotate(-10deg);
+            transform: translate(0rem, 0.7rem) rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: translate(1rem, 0.7rem) rotate(-10deg);
+            transform: translate(1rem, 0.7rem) rotate(-10deg);
+  }
+}
+
+.myNameIsHana .hanaS__Header .header__head .head_in_eye .witheEye {
+  width: 3.5rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 0;
+  -webkit-transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+          transform: translate(0.5rem, 0.7rem) rotate(-10deg);
+  height: 4rem;
+  border-radius: 2rem 3rem 2rem 4rem;
+  animation: eyemoving 2s linear infinite reverse;
+  background: #343241;
+}
+
+.myNameIsHana .hanaS__Header .header__head .head_in_eye .witheEye .circle {
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  -webkit-transform: translate(2.8rem, 2rem);
+          transform: translate(2.8rem, 2rem);
+  border-radius: 50%;
+}
+
+.myNameIsHana .hanaS__Header .header__head .right {
+  -webkit-transform: translate(11rem, -9rem);
+          transform: translate(11rem, -9rem);
+}
+
+.myNameIsHana .hanaS__Body {
+  width: 30rem;
+  height: 20rem;
+  background: #ffe0d8;
+  -webkit-transform: translate(10rem, -7rem) rotate(5deg);
+          transform: translate(10rem, -7rem) rotate(5deg);
+  border-radius: 16rem 13rem 1rem 1rem;
+}
+
+.myNameIsHana .hanaS__Body .body_closet {
+  border-radius: 16rem 13rem 6rem 3rem;
+  width: 30rem;
+  height: 25rem;
+  -webkit-box-shadow: 0.1rem 0.2rem 5rem #9f5025c5;
+          box-shadow: 0.1rem 0.2rem 5rem #9f5025c5;
+  background: #563fff;
+  position: absolute;
+}
+
+.myNameIsHana .hanaS__Body .body_closet::after {
+  content: '1';
+  font-size: 3rem;
+  color: #fdcabc;
+  -webkit-transform: translate(3rem, 5rem);
+          transform: translate(3rem, 5rem);
+  position: absolute;
+}
+
+.myNameIsHana .hanaS__Body .body_Arm {
+  width: 8rem;
+  z-index: 100;
+  height: 6rem;
+  position: relative;
+  background: #ffe0d8;
+  -webkit-box-shadow: 0rem 2rem 4rem #302f2f60;
+          box-shadow: 0rem 2rem 4rem #302f2f60;
+  border-radius: 15rem 10rem 10rem 8rem;
+  position: absolute;
+  -webkit-transform: translate(1rem, 18rem) rotate(15deg);
+          transform: translate(1rem, 18rem) rotate(15deg);
+  animation: mousemoving 2s ease-in-out infinite reverse;
+}
+
+.myNameIsHana .hanaS__Body .right {
+  border-radius: 10rem 15rem 10rem 8rem;
+  -webkit-transform: translate(15rem, 21rem) rotate(30deg);
+          transform: translate(15rem, 21rem) rotate(30deg);
+  animation: armworking 2s linear infinite reverse;
+}
+
+@-webkit-keyframes armworking {
+  0% {
+    -webkit-transform: translate(15rem, 18rem);
+            transform: translate(15rem, 18rem);
+  }
+  50% {
+    -webkit-transform: translate(15rem, 21rem);
+            transform: translate(15rem, 21rem);
+  }
+  100% {
+    -webkit-transform: translate(15rem, 18rem);
+            transform: translate(15rem, 18rem);
+  }
+}
+
+@keyframes armworking {
+  0% {
+    -webkit-transform: translate(15rem, 18rem);
+            transform: translate(15rem, 18rem);
+  }
+  50% {
+    -webkit-transform: translate(15rem, 21rem);
+            transform: translate(15rem, 21rem);
+  }
+  100% {
+    -webkit-transform: translate(15rem, 18rem);
+            transform: translate(15rem, 18rem);
+  }
+}
+
+@-webkit-keyframes mousemoving {
+  0% {
+    -webkit-transform: translate(1rem, 23rem) rotate(15deg);
+            transform: translate(1rem, 23rem) rotate(15deg);
+  }
+  50% {
+    -webkit-transform: translate(1rem, 20rem) rotate(-5deg);
+            transform: translate(1rem, 20rem) rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: translate(1rem, 23rem) rotate(10deg);
+            transform: translate(1rem, 23rem) rotate(10deg);
+  }
+}
+
+@keyframes mousemoving {
+  0% {
+    -webkit-transform: translate(1rem, 23rem) rotate(15deg);
+            transform: translate(1rem, 23rem) rotate(15deg);
+  }
+  50% {
+    -webkit-transform: translate(1rem, 20rem) rotate(-5deg);
+            transform: translate(1rem, 20rem) rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: translate(1rem, 23rem) rotate(10deg);
+            transform: translate(1rem, 23rem) rotate(10deg);
+  }
+}
+
+.myNameIsHana .neck {
+  width: 7rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #ffe0d8;
+  -webkit-transform: translate(11rem, -0.5rem) rotate(-7deg);
+          transform: translate(11rem, -0.5rem) rotate(-7deg);
+}
+
+.myNameIsHana .head_lip {
+  width: 5rem;
+  font-size: 5rem;
+  height: 2rem;
+  color: #fd9376;
+  border-radius: 50%;
+  font-family: 'SangSangShinb7';
+  -webkit-transform: translate(10rem, -7rem) rotate(105deg);
+          transform: translate(10rem, -7rem) rotate(105deg);
+}
+
+.myNameIsHana .noteBook {
+  width: 35rem;
+  height: 12rem;
+  z-index: 0;
+  background: #c8b7ff;
+  border-radius: 2rem;
+  -webkit-transform: translate(-5rem, 23rem) rotate3D(-4, 3, 0, -40deg) rotate(5deg);
+          transform: translate(-5rem, 23rem) rotate3D(-4, 3, 0, -40deg) rotate(5deg);
+  -webkit-box-shadow: 1rem 1rem 0.1rem #a18ce6;
+          box-shadow: 1rem 1rem 0.1rem #a18ce6;
+}
+
+.myNameIsHana .noteBook .innerkeybord {
+  -webkit-transform: translate(2rem, 1rem);
+          transform: translate(2rem, 1rem);
+  width: 30rem;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.myNameIsHana .noteBook .notebook_Keypad:hover,
+.myNameIsHana .noteBook .noteBook_keypad:active {
+  cursor: pointer;
+  background: #d4d8ff;
+  -webkit-box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+          box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+}
+
+.myNameIsHana .noteBook .notebook_Keypad {
+  width: 2rem;
+  -webkit-box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+          box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+  height: 2rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.myNameIsHana .noteBook .notebook_Keypad:nth-child(8) {
+  animation: keypadnock 2s linear infinite reverse;
+}
+
+.myNameIsHana .noteBook .notebook_Keypad:nth-child(17) {
+  animation: keypadnock 3s ease-in-out infinite reverse;
+}
+
+@-webkit-keyframes keypadnock {
+  0% {
+    background: #d4d8ff;
+    -webkit-box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+            box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+  }
+  50% {
+    background: white;
+    -webkit-box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+            box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+  }
+  100% {
+    background: #d4d8ff;
+    -webkit-box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+            box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+  }
+}
+
+@keyframes keypadnock {
+  0% {
+    background: #d4d8ff;
+    -webkit-box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+            box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+  }
+  50% {
+    background: white;
+    -webkit-box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+            box-shadow: 0.1rem 0.3rem 0.3rem #b694e6;
+  }
+  100% {
+    background: #d4d8ff;
+    -webkit-box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+            box-shadow: -0.1rem -0.3rem 0.3rem #b694e6;
+  }
+}
+
+.myNameIsHana .noteBook .spacebar {
+  width: 6rem;
+}
+
+.myNameIsHana .noteBook .hotPink {
+  background: #e99ec4;
+  -webkit-box-shadow: 0rem 0.3rem 0.3rem #b15a97;
+          box-shadow: 0rem 0.3rem 0.3rem #b15a97;
+}
+
+.mysection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  width: 144rem;
+  height: 72rem;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.thisShowitems {
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.information {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.information .myskillsietm {
+  width: 20rem;
+  position: absolute;
+  height: 20rem;
+  -webkit-transform: translate(80rem, -25rem) rotate(30deg);
+          transform: translate(80rem, -25rem) rotate(30deg);
+  background: #4cf9df;
+  -webkit-box-shadow: 0rem 2rem 5rem #d0e6a5;
+          box-shadow: 0rem 2rem 5rem #d0e6a5;
+  border-radius: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.information .myskillsietm .linesome {
+  width: 100%;
+  height: 50%;
+  border-radius: 7rem;
+  background: transparent;
+  border-top: 0.2rem solid #ffffffa8;
+}
+
+.aboutme {
+  width: 95rem;
+  height: 70rem;
+  border-radius: 15rem 1rem 1rem 15rem;
+  padding-right: 40rem;
+}
+
+.aboutme .title {
+  font-size: 6rem;
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
+  z-index: 200;
+  color: #343241;
+}
+
+.aboutme .aboutmyinfo {
+  position: absolute;
+  width: 40rem;
+  -webkit-transform: translate(80rem, 20rem);
+          transform: translate(80rem, 20rem);
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  height: 30rem;
+  text-align: center;
+  padding: 1rem;
+  letter-spacing: 0.1rem;
+  background: rgba(255, 255, 255, 0.436);
+  z-index: 100;
+}
+
+@-webkit-keyframes balling {
+  0% {
+  }
+  25% {
+    -webkit-transform: translate(100rem, 0rem) rotate(90deg);
+            transform: translate(100rem, 0rem) rotate(90deg);
+  }
+  50% {
+    -webkit-transform: translate(100rem, 50rem) rotate(0deg);
+            transform: translate(100rem, 50rem) rotate(0deg);
+    background: #bfffac;
+  }
+  100% {
+    -webkit-transform: rotate(-2rem, 50rem) rotate(180deg);
+            transform: rotate(-2rem, 50rem) rotate(180deg);
+  }
+}
+
+@keyframes balling {
+  0% {
+  }
+  25% {
+    -webkit-transform: translate(100rem, 0rem) rotate(90deg);
+            transform: translate(100rem, 0rem) rotate(90deg);
+  }
+  50% {
+    -webkit-transform: translate(100rem, 50rem) rotate(0deg);
+            transform: translate(100rem, 50rem) rotate(0deg);
+    background: #bfffac;
+  }
+  100% {
+    -webkit-transform: rotate(-2rem, 50rem) rotate(180deg);
+            transform: rotate(-2rem, 50rem) rotate(180deg);
+  }
+}
+
+.aboutme .greenstiker {
+  -webkit-animation: balling 6s ease infinite;
+          animation: balling 6s ease infinite;
+}
+
+.aboutme .aboutmepo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #ff7a7a9d;
+  z-index: 2;
+  position: absolute;
+  -webkit-transform: translate(-5rem, 30rem) rotate(15deg);
+          transform: translate(-5rem, 30rem) rotate(15deg);
+}
+
+.aboutme .aboutmepo.yellowstiker {
+  height: 30rem;
+  width: 40rem;
+  background-color: #ecfdbcd1;
+  -webkit-animation: none;
+          animation: none;
+  border-radius: 1rem;
+}
+
+.aboutme .book {
+  width: 55rem;
+  height: 55rem;
+  border-radius: 20rem 1rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotate(5deg) translate(15rem, 13rem);
+          transform: rotate(5deg) translate(15rem, 13rem);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.aboutme .book .myName {
+  font-size: 6rem;
+  position: absolute;
+}
+
+.aboutme .book .myName.H {
+  -webkit-transform: translate(-30rem, -20rem) rotate(10deg);
+          transform: translate(-30rem, -20rem) rotate(10deg);
+}
+
+.aboutme .book .myName.A {
+  -webkit-transform: translate(-15rem, 25rem);
+          transform: translate(-15rem, 25rem);
+}
+
+.aboutme .book .myName.N {
+  font-size: 6rem;
+  -webkit-transform: translate(0rem, 40rem);
+          transform: translate(0rem, 40rem);
+}
+
+.aboutme .book .nameimg {
+  width: 35rem;
+  animation: rotating 2s linear infinite reverse;
+}
+
+.aboutme .book .myPicture {
+  border-radius: 50%;
+  width: 40rem;
+  height: 40rem;
+  background: url("../img/IMG_9709.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-transform: translate(0rem, -10em) rotate(-5deg);
+          transform: translate(0rem, -10em) rotate(-5deg);
+}
+
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+}
+
+.myskill {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.myskill .myskillsietm {
+  width: 15rem;
+  position: absolute;
+  height: 15rem;
+  -webkit-transform: translate(50rem, -30rem) rotate(-30deg);
+          transform: translate(50rem, -30rem) rotate(-30deg);
+  background: #4cf9df;
+  background: radial-gradient(circle, #b8ff99 0%, #83fee1 100%);
+  border-radius: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.myskill .desk {
+  position: absolute;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 90rem;
+  -webkit-transform: translate(-9rem);
+          transform: translate(-9rem);
+  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: radial-gradient(circle, #fc9e5b 0%, #ffff8c 100%);
+  animation: borderradius 5s linear infinite reverse;
+}
+
+.myskill .desk .infoskill {
+  width: 30rem;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  letter-spacing: 0.7rem;
+  overflow-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: left;
+}
+
+.myskill .desk .infoskill h1 {
+  display: inline-block;
+  font-size: 3rem;
+  color: white;
+  letter-spacing: .7rem;
+}
+
+.myskill .desk .infoskill p {
+  text-indent: 2rem;
+  font-size: 1.8rem;
+  text-shadow: 0rem 0rem 0rem #fc9e5b;
+  color: white;
+  font-family: "GmarketSansMedium";
+}
+
+.myskill .mySkillKeybord--outer--front {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 60%;
+  height: 70%;
+  -webkit-transform: translate(0rem, -2.3rem) rotate(7deg);
+          transform: translate(0rem, -2.3rem) rotate(7deg);
+  border-radius: 2rem;
+  border-bottom: 0.1rem solid #c5b4fb;
+  -webkit-box-shadow: 0rem 3rem 8rem #c681738f;
+          box-shadow: 0rem 3rem 8rem #c681738f;
+  background-image: linear-gradient(135deg, #c8b7ff 10%, #caa7a2 100%);
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner {
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0rem 2rem 6rem #736abb;
+          box-shadow: 0rem 2rem 6rem #736abb;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 85%;
+  background-image: linear-gradient(120deg, #c8b7ff 10%, #9d8bdd 100%);
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner button {
+  border: none;
+  cursor: pointer;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop {
+  width: 95%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop .linetop--key {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
+          box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
+  border-radius: 1rem;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.5rem;
+  background: whitesmoke;
+  text-align: center;
+  line-height: 8rem;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop .linetop--key.activeKey {
+  -webkit-box-shadow: 0.5rem 1rem 3rem #baf0efcb;
+          box-shadow: 0.5rem 1rem 3rem #baf0efcb;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop .linetop--key.hidden {
+  visibility: hidden;
+  width: 2rem;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop .linetop--key.ESC {
+  background: #fbacd3;
+  width: 10rem;
+  -webkit-box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+          box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linetop .linetop--key span {
+  font-family: 'Pretendard-Regular';
+  font-size: 2rem;
+  color: #6c65a0;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 65%;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+  width: 8rem;
+  height: 8rem;
+  background: whitesmoke;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  -webkit-box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
+          box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.activeKey {
+  -webkit-box-shadow: 0.5rem 1rem 3rem #baf0e4cb;
+          box-shadow: 0.5rem 1rem 3rem #baf0e4cb;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key span {
+  font-size: 2rem;
+  font-family: 'Pretendard-Regular';
+  color: #6c65a0;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key img {
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.spacebar {
+  width: 35rem;
+  height: 8rem;
+  background: whitesmoke;
+  -webkit-box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+          box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.spacebar span {
+  letter-spacing: 1rem;
+  color: #6c65a0;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.enter {
+  width: 20rem;
+  background: #ffd452;
+  -webkit-box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+          box-shadow: 0.5rem 1rem 3rem #836ba1cb;
+  letter-spacing: 1rem;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.enter span {
+  color: white;
+  text-shadow: 0rem 0rem 2rem #f0ab65;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.name {
+  background: #c8b7ff;
+  -webkit-box-shadow: 0.5rem 1rem 3rem #755e91cb;
+          box-shadow: 0.5rem 1rem 3rem #755e91cb;
+}
+
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.name span {
+  color: white;
+}
+
+.protfolios {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.protfolios .AboutportFolio {
+  width: 40rem;
+  height: 40rem;
+  background: ivory;
+  position: absolute;
+  -webkit-transform: translate(25rem, 5rem);
+          transform: translate(25rem, 5rem);
+}
+
+.protfolios .deskcircle {
+  width: 90rem;
+  height: 55rem;
+  position: absolute;
+  -webkit-transform: translate(10%, 20%);
+          transform: translate(10%, 20%);
+  animation: borderradius 4s linear infinite reverse;
+  background-image: linear-gradient(-40deg, #fce795 10%, #91f4fd 100%);
+}
+
+.protfolios .mybookdesk {
+  width: 37%;
+  height: 85%;
+  -webkit-box-shadow: -1rem 3rem 8rem #c5a8a8b9;
+          box-shadow: -1rem 3rem 8rem #c5a8a8b9;
+  border-radius: 3rem 2rem 1rem 1rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 0.1rem solid #a2bcbd;
+  background: linear-gradient(60deg, #acced0, #fbd4a1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotate(-5deg) translate(-28rem, -5rem) perspective(60rem) rotateX(3deg);
+          transform: rotate(-5deg) translate(-28rem, -5rem) perspective(60rem) rotateX(3deg);
+}
+
+.protfolios .mybookdesk .portfolioBook {
+  cursor: pointer;
+}
+
+.protfolios .mybookdesk .bookpage {
+  width: 90%;
+  height: 92%;
+  background: radial-gradient(circle, whitesmoke, white);
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+  -webkit-box-shadow: 0rem 1rem 2rem #bca59ddb;
+          box-shadow: 0rem 1rem 2rem #bca59ddb;
+  position: absolute;
+}
+
+.protfolios .mybookdesk .bookpage.top {
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.protfolios .mybookdesk .bookpage.first {
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  background: #d0fff2;
+}
+
+.protfolios .mybookdesk .mybookdesk--main {
+  width: 102%;
+  border-radius: 3rem 15rem 0rem 0rem;
+  height: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: -webkit-gradient(linear, left bottom, right top, from(#fca9a9), to(#fbceb2));
+  background: linear-gradient(to right top, #fca9a9, #fbceb2);
+  -webkit-transform: translate(0rem, -3rem);
+          transform: translate(0rem, -3rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .kiosk::after,
+.protfolios .mybookdesk .mybookdesk--main .kiosk::before {
+  position: absolute;
+  content: '';
+  -webkit-transform: translate(12.5rem, 11.5rem);
+          transform: translate(12.5rem, 11.5rem);
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid #ff8a8aa8;
+  background: #ff8a8aa8;
+  border-radius: 50%;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .kiosk::before {
+  -webkit-transform: translate(-1rem, 11.5rem);
+          transform: translate(-1rem, 11.5rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .kiosk {
+  position: absolute;
+  width: 13.5rem;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  background: #ffcfd7;
+  height: 20rem;
+  z-index: 100;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.661);
+  border-bottom: 0.1rem solid #ff7a7a9d;
+  -webkit-transform: translate(-19rem, 1rem) rotate(25deg) perspective(30rem) rotateX(2deg);
+          transform: translate(-19rem, 1rem) rotate(25deg) perspective(30rem) rotateX(2deg);
+  -webkit-box-shadow: -0.2rem 0.5rem 1.5rem #ff8a8aa8;
+          box-shadow: -0.2rem 0.5rem 1.5rem #ff8a8aa8;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .kiosk .kiosktitle {
+  position: absolute;
+  color: white;
+  text-shadow: 0rem 0.1rem 0.1rem #ff7a7a9d;
+  font-family: 'YdestreetB';
+  letter-spacing: 0.4rem;
+  font-size: 2.5rem;
+  -webkit-transform: translate(1rem, 3rem);
+          transform: translate(1rem, 3rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .kiosk .kioskLine {
+  position: absolute;
+  width: 80%;
+  height: 71%;
+  -webkit-transform: translate(1.3rem, -2rem);
+          transform: translate(1.3rem, -2rem);
+  border-bottom: 0.2rem dashed #ff7a7a9d;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top {
+  -webkit-box-shadow: inset 0rem 0.5rem 1rem #d38979a8, 1rem 0rem 4rem #fbceb2;
+          box-shadow: inset 0rem 0.5rem 1rem #d38979a8, 1rem 0rem 4rem #fbceb2;
+  background: #ffeedf;
+  border-left: 0.1rem solid #ffafa7;
+  border-top: 0.1rem solid #f8a3a3d1;
+  border-radius: 1rem 15rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 73%;
+  height: 25%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transform: translate(0rem, -3rem);
+          transform: translate(0rem, -3rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook {
+  cursor: pointer;
+  width: 30rem;
+  height: 15rem;
+  margin: 1rem;
+  position: relative;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook.matrixcal {
+  -webkit-transform: rotate(10deg) translateY(-1rem);
+          transform: rotate(10deg) translateY(-1rem);
+  text-align: center;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook.matrixcal .matrixbody {
+  width: 60%;
+  border-radius: 1rem;
+  display: inline-block;
+  height: 90%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: -1rem 1rem 3rem #edb7aba8;
+          box-shadow: -1rem 1rem 3rem #edb7aba8;
+  background: white;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook.matrixcal .matrixbody .matrixviewer {
+  width: 80%;
+  height: 15%;
+  -webkit-box-shadow: 0.5rem -0.5rem 1rem rgba(253, 255, 230, 0.527);
+          box-shadow: 0.5rem -0.5rem 1rem rgba(253, 255, 230, 0.527);
+  display: inline-block;
+  border-radius: 5%;
+  -webkit-transform: translateY(60%);
+          transform: translateY(60%);
+  background: #9dc0f9;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook.matrixcal .matrixbody .matrixpad {
+  -webkit-transform: translate(13%, 30%);
+          transform: translate(13%, 30%);
+  border-radius: 5%;
+  width: 80%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook.matrixcal .matrixbody .matrixpad .padkey {
+  width: 25%;
+  height: 30%;
+  background: white;
+  -webkit-box-shadow: -0.1rem 0.2rem 0.1rem #9dc0f9;
+          box-shadow: -0.1rem 0.2rem 0.1rem #9dc0f9;
+  margin: 1%;
+  border-radius: 10%;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotate(-18deg) translate(2rem, -1rem);
+          transform: rotate(-18deg) translate(2rem, -1rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .dogface {
+  border-radius: 5rem 5rem 4rem 4rem;
+  width: 65%;
+  height: 80%;
+  z-index: 10;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: ivory;
+  -webkit-box-shadow: -1rem 1rem 3rem #edb7aba8;
+          box-shadow: -1rem 1rem 3rem #edb7aba8;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .dogface .eye {
+  width: 1.5rem;
+  border-radius: 50%;
+  height: 1.5rem;
+  position: relative;
+  background: #2a2932;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .dogface .eye::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .dogface .nose {
+  width: 1.3rem;
+  height: 1rem;
+  -webkit-box-shadow: 0rem -1rem 2rem #ae9191;
+          box-shadow: 0rem -1rem 2rem #ae9191;
+  background: #322a29;
+  border-radius: 50%;
+  -webkit-transform: translate(0rem, 1rem);
+          transform: translate(0rem, 1rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .ear {
+  width: 14%;
+  background: #322a28;
+  height: 40%;
+  border-radius: 50%;
+  -webkit-transform: translate(0rem, 2rem);
+          transform: translate(0rem, 2rem);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .ear:first-child {
+  -webkit-transform: translate(1rem, 2rem) rotate(17deg);
+          transform: translate(1rem, 2rem) rotate(17deg);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__top .portfolioBook:first-child .ear:last-child {
+  -webkit-transform: translate(-1rem, 2rem) rotate(-17deg);
+          transform: translate(-1rem, 2rem) rotate(-17deg);
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__bottom {
+  visibility: hidden;
+  -webkit-box-shadow: inset -0.5rem 0.5rem 1rem #d17e6b82, 2rem -2rem 3rem #fbceb2;
+          box-shadow: inset -0.5rem 0.5rem 1rem #d17e6b82, 2rem -2rem 3rem #fbceb2;
+  background: #ffeedf;
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 0.1rem solid #fbf0b2;
+  -webkit-transform: translate(10%);
+          transform: translate(10%);
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 45%;
+  border-radius: 2rem 4rem 1rem 1rem;
+}
+
+.protfolios .mybookdesk .mybookdesk--main .bookdesk__bottom .portfolioBook {
+  width: 18%;
+  height: 90%;
+}
+
+.blogfooter {
+  height: 50rem;
+}
+
+.blogfooter .contactme {
+  position: relative;
+  background: #30ffc4;
+}
