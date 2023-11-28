@@ -542,7 +542,7 @@ window.onload = () => {
 	$('button').on('click', (e) => {
 		switch (e.target.id) {
 			case 'dogSleeppage':
-				window.open('http://pager.kr/~c15st21/Portfolio/eventpage/');
+				window.open('https://vercel.com/21color/evnetpage/CKTLRJk5L5NEsdWxkpGUdgPJpnRm');
 				break;
 			case 'dogSleepPpt':
 				window.open(
@@ -550,19 +550,21 @@ window.onload = () => {
 				);
 				break;
 			case 'matrixPage':
-				window.open('http://pager.kr/~c15st21/Portfolio/matrixCal/html/matrix3.html');
+				window.open('https://matrix-calculator-seven.vercel.app/html/matrix3.html');
 				break;
 			case 'kioskpdf':
-					window.open('http://pager.kr/~c15st21/Portfolio/PDF/4%ec%a1%b0%20%ed%82%a4%ec%98%a4%ec%8a%a4%ed%81%ac%20ppt.pdf');
-					break;
+				window.open(
+					'http://pager.kr/~c15st21/Portfolio/PDF/4%ec%a1%b0%20%ed%82%a4%ec%98%a4%ec%8a%a4%ed%81%ac%20ppt.pdf'
+				);
+				break;
 			case 'kioskPage':
 				window.open('http://pager.kr:2000/force');
 				break;
 			case 'corailnecharacter':
-				window.open('http://pager.kr/~c15st21/Portfolio/Characters/html/');
+				window.open('https://coraline-sigma.vercel.app/html');
 				break;
-			case 'ProductDetailpage': 
-			window.open('http://192.168.48.15:5500/Portfolio/product_detail/html/index.html');
+			case 'ProductDetailpage':
+				window.open('http://192.168.48.15:5500/Portfolio/product_detail/html/index.html');
 		}
 	});
 
