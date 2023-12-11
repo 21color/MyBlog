@@ -542,7 +542,7 @@ window.onload = () => {
 	$('button').on('click', (e) => {
 		switch (e.target.id) {
 			case 'dogSleeppage':
-				window.open('https://evnetpage-1b7u0suey-21color.vercel.app');
+				window.open('https://evnetpage.vercel.app/');
 				break;
 			case 'dogSleepPpt':
 				window.open(
