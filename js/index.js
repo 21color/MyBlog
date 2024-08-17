@@ -1,43 +1,35 @@
 window.onload = () => {
-	// setTimeout(function () {
-	// 	scrollTo(0, 0);
-	// }, 100);
-	// 온로드되었을때 대문
-	activate = () => {
-		clearTimeout(activate);
-		const mysections = document.querySelectorAll('.mysection');
+	const activate = () => {
+		const mySections = document.querySelectorAll('.mysection');
 		const myCircle = document.querySelectorAll('.thisshowitemss');
-		const bigrestRoom = document.querySelector('.bigrestRoom');
-		let windowH = window.innerHeight;
-		const wintop = window.screenTop;
-		const scrollY = window.scrollY;
-		myCircle.forEach((mycircles) => {
-			console.log(mycircles.getBoundingClientRect().top);
-			console.log(mycircles.getBoundingClientRect().bottom - windowH);
-			if (mycircles.getBoundingClientRect().top < windowH) {
+		const bigRestRoom = document.querySelector('.bigrestRoom');
+		const windowH = window.innerHeight;
+
+		myCircle.map((myCircles) => {
+			if (myCircles.getBoundingClientRect().top < windowH) {
 				myCircle[0].style.transform = 'translate(4rem, -15rem)';
 				myCircle[1].style.transform = 'translate(-28rem, 35rem)';
 				myCircle[2].style.transform = 'translate(20rem, 35rem)';
-				mycircles.style.opacity = 1;
+				myCircles.style.opacity = 1;
 			} else {
-				mycircles.style.opacity = 0;
+				myCircles.style.opacity = 0;
 				myCircle[0].style.transform = 'translate(10rem, -15rem)';
 				myCircle[1].style.transform = 'translate(-28rem, 70rem)';
 				myCircle[2].style.transform = 'translate(90rem, 35rem)';
 			}
 		});
 
-		for (const element of mysections) {
+		for (const element of mySections) {
 			if (element.getBoundingClientRect().top < windowH) {
 				element.style.opacity = 1;
 			} else {
 				element.style.opacity = 0;
 			}
 		}
-		if (bigrestRoom.getBoundingClientRect().top < windowH) {
-			bigrestRoom.style.opacity = 1;
+		if (bigRestRoom.getBoundingClientRect().top < windowH) {
+			bigRestRoom.style.opacity = 1;
 		} else {
-			bigrestRoom.style.opacity = 0;
+			bigRestRoom.style.opacity = 0;
 		}
 	};
 
@@ -48,13 +40,13 @@ window.onload = () => {
 		hanatitle.style.opacity = '1';
 	}, 800);
 
-	loadmyRoom = () => {
+	const loadMyRoom = () => {
 		const mydoorhandleBtn = document.querySelector('.key');
 		const mydoor = document.querySelector('.mydoor');
 		const color1 = document.querySelector('.stop3');
 		const mysection = document.querySelectorAll('.mysection');
 		const myinformation = document.querySelector('.myslame');
-		mysection.forEach((mysections) => {
+		mysection.forEach((mySections) => {
 			mydoorhandleBtn.addEventListener('click', () => {
 				mydoorhandleBtn.setAttribute('data-id', 'swichOn');
 				mydoorhandleBtn.style.transform = 'translate(-1rem, 0rem) rotate(15deg)';
@@ -62,20 +54,20 @@ window.onload = () => {
 				setTimeout(() => {
 					mydoor.style.visibility = 'hidden';
 					mydoor.style.opacity = 0;
-					const selectmenubox = document.querySelector('.selectmenubox');
-					selectmenubox.style.visibility = 'visible';
-					selectmenubox.style.opacity = '1';
-					// selectmenubox.style.transform = 'translate(40rem)';
+					const selectMenubox = document.querySelector('.selectMenubox');
+					selectMenubox.style.visibility = 'visible';
+					selectMenubox.style.opacity = '1';
+					// selectMenubox.style.transform = 'translate(40rem)';
 				}, 1000);
 				setTimeout(() => {
 					color1.style.stopColor = '#ff7f43';
 					myinformation.style.display = 'flex';
-					mysections.style.display = 'flex';
+					mySections.style.display = 'flex';
 				}, 1200);
 			});
 		});
 	};
-	loadmyRoom();
+	loadMyRoom();
 
 	//info
 
@@ -91,22 +83,21 @@ window.onload = () => {
 	svgpath.style.strokeDasharray = pathlenght;
 	svgpath.style.strokeDashoffset = calcDashoffset(window.innerHeight * 0.8, portFolio, pathlenght);
 
-	function calcDashoffset(scrollYY, element, length) {
+	const calcDashoffset = (scrollYY, element, length) => {
 		const ratio = (scrollYY - element.offsetTop) / element.offsetHeight;
 		const myvalue = length - length * ratio;
 		return myvalue < 0 ? 0 : myvalue > length ? length : myvalue;
-	}
+	};
 
-	function scrollpath() {
+	const scrollpath = () => {
 		const scrollYY = window.scrollY + window.innerHeight * 0.8;
 		svgpath.style.strokeDashoffset = calcDashoffset(scrollYY, portFolio, pathlenght);
-	}
+	};
 	window.addEventListener('scroll', scrollpath);
 	//포폴책~
 
-	showMyportFolid = () => {};
 	//메인메뉴 클릭
-	selectmenu = () => {
+	const selectMenu = () => {
 		const mymenu = document.querySelectorAll('.menu');
 		const doorwapper = document.querySelector('doorwapper');
 		const intro = document.querySelector('.thisShowitems');
@@ -114,7 +105,6 @@ window.onload = () => {
 		const protfolios = document.querySelector('.protfolios');
 		const blogfooter = document.querySelector('.blogfooter');
 		mymenu.forEach((menuvalue) => {
-			console.log(menuvalue);
 			menuvalue.addEventListener('click', (event) => {
 				switch (event.currentTarget.id) {
 					case 'aboutHana':
@@ -143,12 +133,12 @@ window.onload = () => {
 			});
 		});
 	};
-	selectmenu();
+	selectMenu();
 
 	//about me
 
 	//시계
-	clockTrolloge = () => {
+	const clockTrolloge = () => {
 		const deg = 6;
 		const myhr = document.querySelector('.clockhour_hr');
 		const mymn = document.querySelector('.clockmin_min');
@@ -166,127 +156,148 @@ window.onload = () => {
 	};
 	clockTrolloge();
 
-	$('.intro').on('click', (e) => {
-		console.log(e.target);
+	const intro = document.querySelector('.intro');
+	const clickKeyboardEvent = (e) => {
+		const onclickviwer = document.querySelector('.onclickviwer');
+		const hana_s_info = document.querySelector('.hana_s_info');
+		const mouseChoseinformation = document.querySelector('.mouseChoseinformation');
+		const BigRoom = document.querySelector('.BigRoom');
+
 		switch (e.target.className) {
 			case 'mouseup':
 			case 'mousedown':
-				$('.onclickviwer').css({
-					visibility: 'visible',
-				});
-				$('.hana_s_info').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.mouseChoseinformation').css({
-					visibility: 'hidden',
-				});
-				$('.BigRoom').css({
-					width: '135rem',
-					transform: 'translate(5rem)',
-				});
-
+				onclickviwer.style.visibility = 'visible';
+				hana_s_info.style.opacity = '1';
+				hana_s_info.style.visibility = 'visible';
+				mouseChoseinformation.style.visibility = 'hidden';
+				BigRoom.style.width = '135rem';
+				BigRoom.style.transform = 'translate(5rem)';
 				break;
 			case 'fa-solid fa-xmark closeHanamodal':
-				$('.onclickviwer').css({
-					visibility: 'hidden',
-				});
-				$('.hana_s_info').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.mouseChoseinformation').css({
-					visibility: 'visible',
-				});
-				$('.BigRoom').css({
-					width: '120rem',
-					transform: 'translate(12rem)',
-				});
+				onclickviwer.style.visibility = 'hidden';
+				hana_s_info.style.opacity = '0';
+				hana_s_info.style.visibility = 'hidden';
+				mouseChoseinformation.style.visibility = 'visible';
+				BigRoom.style.width = '120rem';
+				BigRoom.style.transform = 'translate(12rem)';
 				break;
 		}
-	});
-	$('.hana_s_info').on('mouseout', (e) => {
+	};
+
+	intro.addEventListener('click', (e) => clickKeyboardEvent(e));
+
+	const hana_s_info = document.querySelector('.hana_s_info');
+	const mouseOutEvent = (e) => {
+		const books = document.querySelector('.books');
+		const coffees = document.querySelector('.coffees');
+		const newcakes = document.querySelector('.newcakes');
+		const abouthanainfos = document.querySelector('.abouthanainfos');
+
 		switch (e.target.className) {
 			case 'bookstore fa-solid fa-star':
 			case 'coffee fa-solid fa-solid fa-star':
 			case 'newcake fa-solid fa-cake-candles':
 			case 'abouthanainfo fa-solid fa-face-grin-stars':
-				$('.books').css({ opacity: '0', visibility: 'hidden' });
-				$('.coffees').css({ opacity: '0', visibility: 'hidden' });
-				$('.newcakes').css({ opacity: '0', visibility: 'hidden' });
-				$('.abouthanainfos').css({ opacity: '0', visibility: 'hidden' });
+				books.style.opacity = '0';
+				books.style.visibility = 'hidden';
+				coffees.style.opacity = '0';
+				coffees.style.visibility = 'hidden';
+				newcakes.style.opacity = '0';
+				newcakes.style.visibility = 'hidden';
+				abouthanainfos.style.opacity = '0';
+				abouthanainfos.style.visibility = 'hidden';
 				break;
 		}
-	});
-	$('.hana_s_info').on('mouseover', (e) => {
+	};
+	hana_s_info.addEventListener('mouseout', (e) => mouseOutEvent(e));
+
+	//마우스오버이벤트
+	const mouseOverEvent = (e) => {
+		const books = document.querySelector('.books');
+		const coffees = document.querySelector('.coffees');
+		const newcakes = document.querySelector('.newcakes');
+		const abouthanainfos = document.querySelector('.abouthanainfos');
+
 		switch (e.target.className) {
 			case 'bookstore fa-solid fa-star':
-				console.log('hi');
-				$('.books').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.coffees').css({ opacity: '0', visibility: 'hidden' });
-				$('.newcakes').css({ opacity: '0', visibility: 'hidden' });
-				$('.abouthanainfos').css({ opacity: '0', visibility: 'hidden' });
+				books.style.opacity = '1';
+				books.style.visibility = 'visible';
+				coffees.style.opacity = '0';
+				coffees.style.visibility = 'hidden';
+				newcakes.style.opacity = '0';
+				newcakes.style.visibility = 'hidden';
+				abouthanainfos.style.opacity = '0';
+				abouthanainfos.style.visibility = 'hidden';
 				break;
 			case 'coffee fa-solid fa-solid fa-star':
-				$('.books').css({ opacity: '0', visibility: 'hidden' });
-				$('.coffees').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.newcakes').css({ opacity: '0', visibility: 'hidden' });
-				$('.abouthanainfos').css({ opacity: '0', visibility: 'hidden' });
+				books.style.opacity = '0';
+				books.style.visibility = 'hidden';
+				coffees.style.opacity = '1';
+				coffees.style.visibility = 'visible';
+				newcakes.style.opacity = '0';
+				newcakes.style.visibility = 'hidden';
+				abouthanainfos.style.opacity = '0';
+				abouthanainfos.style.visibility = 'hidden';
 				break;
 			case 'newcake fa-solid fa-cake-candles':
-				$('.books').css({ opacity: '0', visibility: 'hidden' });
-				$('.coffees').css({ opacity: '0', visibility: 'hidden' });
-				$('.newcakes').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.abouthanainfos').css({ opacity: '0', visibility: 'hidden' });
+				books.style.opacity = '0';
+				books.style.visibility = 'hidden';
+				coffees.style.opacity = '0';
+				coffees.style.visibility = 'hidden';
+				newcakes.style.opacity = '1';
+				newcakes.style.visibility = 'visible';
+				abouthanainfos.style.opacity = '0';
+				abouthanainfos.style.visibility = 'hidden';
 				break;
 			case 'abouthanainfo fa-solid fa-face-grin-stars':
-				$('.books').css({ opacity: '0', visibility: 'hidden' });
-				$('.coffees').css({ opacity: '0', visibility: 'hidden' });
-				$('.newcakes').css({ opacity: '0', visibility: 'hidden' });
-				$('.abouthanainfos').css({ opacity: '1', visibility: 'visible' });
+				books.style.opacity = '0';
+				books.style.visibility = 'hidden';
+				coffees.style.opacity = '0';
+				coffees.style.visibility = 'hidden';
+				newcakes.style.opacity = '0';
+				newcakes.style.visibility = 'hidden';
+				abouthanainfos.style.opacity = '1';
+				abouthanainfos.style.visibility = 'visible';
 				break;
 		}
-	});
+	};
+
+	hana_s_info.addEventListener('mouseover', (e) => mouseOverEvent(e));
+	// mouseOverEnd
 
 	//스킬 이벤트
-	skillviewer = (skilltree, skillinfo) => {
-		$('.mySkillKeybord--outer--front').css({
-			transform: 'translate(-20rem, -2.3rem) rotate(0deg)',
-		});
-		$('.desk').css({
+
+	const skillviewer = (skilltree, skillinfo) => {
+		const mySkillKeybord = document.querySelector('.mySkillKeybord--outer--front');
+		const desk = document.querySelector('.desk');
+
+		mySkillKeybord.style.transform = 'translate(-20rem, -2.3rem) rotate(0deg)';
+		desk.style = {
 			width: '43rem',
 			height: '43rem',
 			transform: 'translate(44rem, -9rem)',
-		});
-		$('.desk').html(
-			`<div class="infoskill">
+		};
+
+		desk.innerHTML = `<div class="infoskill">
 			<h1>${skilltree}</h1>
 			<p>${skillinfo}</p>
-		</div>`
-		);
+		</div>`;
 	};
-	keyboradBack = () => {
-		$('.mySkillKeybord--outer--front').css({
-			transform: 'translate(0rem,-2.3rem) rotate(7deg)',
-		});
-		$('.desk').css({
+
+	const keyboradBack = () => {
+		const mySkillKeybord = document.querySelector('.mySkillKeybord--outer--front');
+		const desk = document.querySelector('.desk');
+
+		mySkillKeybord.style.transform = 'translate(0rem, -2.3rem) rotate(7deg)';
+		desk.style = {
 			width: '90rem',
 			height: '60rem',
 			transform: 'translate(-8rem, 0rem)',
-		});
+		};
 	};
 
-	aboutmyskill = () => {
-		document.querySelectorAll('.skill').forEach((button, i, buttons) => {
+	const aboutmyskill = () => {
+		document.querySelectorAll('.skill').forEach((button, _, buttons) => {
 			button.addEventListener('click', (e) => {
 				buttons.forEach((btn) => btn.classList.remove('activeKey'));
 				button.classList.add('activeKey');
@@ -365,181 +376,37 @@ window.onload = () => {
 		});
 	};
 	aboutmyskill();
-
-	aboutmyskill = () => {
-		const topkey = document.querySelectorAll('.linetop--key');
-	};
-
 	//	포폴영역
 
 	//아이콘 누르면 보이는 포폴들
-	$('.portfolioBook').on('click', (e) => {
-		switch (e.currentTarget.id) {
-			case 'eventpageDog':
-				$(e.currentTarget).removeClass('pickportfolio');
-				$('.matrixcal').addClass('pickportfolio');
-				$('.kiosk').addClass('pickportfolio');
-				$('.Character').addClass('pickportfolio');
-				$('.productdetail').addClass('pickportfolio');
-				$('.aboutportfolio.defalt').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.eventpages').css({
+
+	const portfolioBook = document.querySelectorAll('.portfolioBook');
+	const portfolioBookClickHandler = (e) => {
+		const portfolioBookId = e.currentTarget.id;
+		portfolioBook.forEach((book) => {
+			if (book.id === portfolioBookId) {
+				book.classList.remove('pickportfolio');
+				book.style = {
 					opacity: '1',
 					visibility: 'visible',
-				});
-				$('.aboutportfolio.kioskmovie').css({
+				};
+			} else {
+				book.classList.add('pickportfolio');
+				book.style = {
 					opacity: '0',
 					visibility: 'hidden',
-				});
-				$('.aboutportfolio.matrixclaculator').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.product').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.character').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				break;
-			case 'kiosk':
-				$(e.currentTarget).removeClass('pickportfolio');
-				$('.matrixcal').addClass('pickportfolio');
-				$('.eventpage').addClass('pickportfolio');
-				$('.Character').addClass('pickportfolio');
-				$('.productdetail').addClass('pickportfolio');
-				$('.aboutportfolio.defalt').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.eventpages').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.kioskmovie').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.aboutportfolio.matrixclaculator').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.company').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.product').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.character').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				break;
-			case 'matrixcalbtn':
-				$(e.currentTarget).removeClass('pickportfolio');
-				$('.kiosk').addClass('pickportfolio');
-				$('.eventpage').addClass('pickportfolio');
-				$('.productdetail').addClass('pickportfolio');
-				$('.Character').addClass('pickportfolio');
-				$('.aboutportfolio.defalt').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.eventpages').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.kioskmovie').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.matrixclaculator').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.aboutportfolio.product').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.character').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				console.log('matrixbtn');
-				break;
-			case 'character':
-				$(e.currentTarget).removeClass('pickportfolio');
-				$('.matrixcal').addClass('pickportfolio');
-				$('.eventpage').addClass('pickportfolio');
-				$('.productdetail').addClass('pickportfolio');
-				$('.kiosk').addClass('pickportfolio');
-				$('.aboutportfolio.defalt').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.eventpages').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.kioskmovie').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.matrixclaculator').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.product').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.character').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				break;
-			case 'productdetail': {
-				$(e.currentTarget).removeClass('pickportfolio');
-				$('.matrixcal').addClass('pickportfolio');
-				$('.eventpage').addClass('pickportfolio');
-				$('.Character').addClass('pickportfolio');
-				$('.kiosk').addClass('pickportfolio');
-				$('.aboutportfolio.defalt').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.eventpages').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.kioskmovie').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.matrixclaculator').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
-				$('.aboutportfolio.product').css({
-					opacity: '1',
-					visibility: 'visible',
-				});
-				$('.aboutportfolio.character').css({
-					opacity: '0',
-					visibility: 'hidden',
-				});
+				};
 			}
-		}
+		});
+	};
+
+	portfolioBook.forEach((book) => {
+		book.addEventListener('click', (e) => portfolioBookClickHandler(e));
 	});
 
 	//포폴페이지 이동
-	$('button').on('click', (e) => {
+
+	const portfolioPageEventHander = (e) => {
 		switch (e.target.id) {
 			case 'dogSleeppage':
 				window.open('https://evnetpage.vercel.app/');
@@ -565,29 +432,40 @@ window.onload = () => {
 				break;
 			case 'ProductDetailpage':
 				window.open('http://192.168.48.15:5500/Portfolio/product_detail/html/index.html');
+				break;
 		}
+	};
+
+	const eventButton = document.querySelectorAll('button');
+	eventButton.forEach((button) => {
+		button.addEventListener('click', (e) => portfolioPageEventHander(e));
 	});
 
 	//마지막 서서히등장!
-	$(document).on('scroll', (e) => {
+
+	document.addEventListener('scroll', (e) => {
 		const windowH = window.innerHeight;
-		const bigrestRoom = document.querySelector('.bigrestRoom').getBoundingClientRect().top;
-		if (bigrestRoom < windowH) {
-			$('.bigrestRoom').css({
+		const bigRestRoom = document.querySelector('.bigRestRoom');
+		const bigRestRoomRect = bigRestRoom.getBoundingClientRect().top;
+
+		if (bigRestRoomRect < windowH) {
+			bigRestRoom.style = {
 				opacity: '1',
 				transform: 'translateY(0rem)',
-			});
+			};
 		} else {
-			$('.bigrestRoom').css({
+			bigRestRoom.style = {
 				opacity: '0',
 				transform: 'translateY(15rem)',
-			});
+			};
 		}
 	});
 
 	//ontop
-	$('#reloadbtn').click((e) => {
+	const ontop = document.querySelector('.ontop');
+	const ontopClick = () => {
 		scrollTo(0, 0);
-	});
+	};
+	ontop.addEventListener('click', ontopClick);
 };
 // 닫히는태그
