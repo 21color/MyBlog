@@ -5,7 +5,7 @@ window.onload = () => {
 		const bigRestRoom = document.querySelector('.bigrestRoom');
 		const windowH = window.innerHeight;
 
-		myCircle.map((myCircles) => {
+		myCircle.forEach((myCircles) => {
 			if (myCircles.getBoundingClientRect().top < windowH) {
 				myCircle[0].style.transform = 'translate(4rem, -15rem)';
 				myCircle[1].style.transform = 'translate(-28rem, 35rem)';
