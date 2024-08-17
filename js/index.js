@@ -271,11 +271,9 @@ window.onload = () => {
 		const desk = document.querySelector('.desk');
 
 		mySkillKeybord.style.transform = 'translate(-20rem, -2.3rem) rotate(0deg)';
-		desk.style = {
-			width: '43rem',
-			height: '43rem',
-			transform: 'translate(44rem, -9rem)',
-		};
+		desk.style.width = '43rem';
+		desk.style.height = '43rem';
+		desk.style.transform = 'translate(44rem, -9rem)';
 
 		desk.innerHTML = `<div class="infoskill">
 			<h1>${skilltree}</h1>
@@ -288,115 +286,121 @@ window.onload = () => {
 		const desk = document.querySelector('.desk');
 
 		mySkillKeybord.style.transform = 'translate(0rem, -2.3rem) rotate(7deg)';
-		desk.style = {
-			width: '90rem',
-			height: '60rem',
-			transform: 'translate(-8rem, 0rem)',
-		};
+		desk.width = '90rem';
+		desk.height = '60rem';
+		desk.style.transform = 'translate(-8rem, 0rem)';
 	};
 
-	const aboutmyskill = () => {
-		document.querySelectorAll('.skill').forEach((button, _, buttons) => {
-			button.addEventListener('click', (e) => {
-				buttons.forEach((btn) => btn.classList.remove('activeKey'));
+	const aboutMySkills = () => {
+		const skillDescriptions = {
+			html: {
+				title: 'HTML',
+				description: '하이퍼 텍스트 마크업 언어를 이해하고 페이지를 위한 뼈대를 적절하게 만들 수 있습니다.',
+			},
+			css: {
+				title: 'CSS',
+				description: 'CSS를 이용하여 만들어진 뼈대 위에 어울리는 피부와 옷을 입힐 수 있습니다.',
+			},
+			pug: {
+				title: 'PUG',
+				description: 'PUG로 HTML을 더욱 더 간결하고 빠르게 작성하여 작업의 효율성을 높일 수 있습니다.',
+			},
+			sass: {
+				title: 'SASS',
+				description:
+					'CSS 전처리기인 SASS의 장점인 네스팅, 내장함수, 변수를 활용하여 순수 CSS보다 다양한 작업을 빠르게 구현할 수 있습니다.',
+			},
+			javascript: {
+				title: 'JAVASCRIPT',
+				description:
+					'객체형과 함수형 프로그래밍에 대해 이해하고 ES6 문법을 학습했습니다. 옷까지 모두 입은 웹에 생명을 불어넣을 수 있습니다.',
+			},
+			jquery: {
+				title: 'JQUERY',
+				description: '제이쿼리를 이용하여 조금 더 빠르고 쉽게 DOM 조작과 이벤트 제어를 할 수 있습니다.',
+			},
+			react: {
+				title: 'REACT',
+				description:
+					'리액트에서 사용되는 JSX와 Virtual DOM에 대해 이해하고 있으며, props와 state를 이용한 개발에 대해 학습했습니다.',
+			},
+			SQL: {
+				title: 'SQL',
+				description:
+					'SQL을 활용한 데이터베이스 생성과 활용을 할 수 있습니다. 스토어드 프로시저를 비롯한 고급 개념으로 더욱 확장 중입니다.',
+			},
+			node: {
+				title: 'NODEjs',
+				description:
+					'자바스크립트 런타임인 Node.js를 이용하여 웹 브라우저 외부에서 자바스크립트 개발을 할 수 있습니다. 포트폴리오 목록의 키오스크에 해당 언어를 활용했습니다.',
+			},
+			php: {
+				title: 'PHP',
+				description: '서버에서 동작하는 인터프리터 방식 언어인 PHP로 데이터베이스 연결이 가능합니다.',
+			},
+			photoshop: {
+				title: 'PHOTOSHOP',
+				description: '포토샵을 이용하여 이미지의 편집과 수정, 그림을 그리는 것도 가능합니다.',
+			},
+			illurst: {
+				title: 'ILLUSTRATOR',
+				description:
+					'벡터 기반 프로그램인 일러스트레이터를 활용할 수 있습니다. 제 블로그의 배경에 그려지는 선 또한 일러스트레이터를 활용했습니다.',
+			},
+		};
+
+		document.querySelectorAll('.skill').forEach((button) => {
+			button.addEventListener('click', () => {
+				document.querySelectorAll('.skill').forEach((btn) => btn.classList.remove('activeKey'));
 				button.classList.add('activeKey');
-				switch (button.id) {
-					case 'html':
-						skillviewer(`HTML`, `하이퍼 텍스트 마크업 언어를 이해하고 페이지를 위한 뼈대를 적절하게 만들 수 있습니다.`);
-						break;
 
-					case 'css':
-						skillviewer(`CSS`, ` CSS를 이용하여 만들어진 뼈대위에 어울리는 피부와 옷을 입힐 수 있습니다.`);
-						break;
-
-					case 'pug':
-						skillviewer(`PUG`, `PUG로 HTML을 더욱 더 간결하고 빠르게 작성하여 작업의 효율성을 높일 수 있습니다.`);
-						break;
-
-					case 'sass':
-						skillviewer(
-							`SASS`,
-							`CSS 전처리기인 SASS의 장점인 네스팅, 내장함수, 변수를 활용하여 순수 CSS를 사용한 것보다 다양한 작업을 빠르게 구현할 수 있습니다.`
-						);
-						break;
-
-					case 'javascript':
-						skillviewer(
-							`JAVASCRIPT`,
-							`객체형과 함수형 프로그래밍에대해 이해하고 ES6 문법을 학습했습니다. 옷까지 모두 입은 웹에 생명을 불어넣어줄 수 있습니다.`
-						);
-						break;
-
-					case 'jquery':
-						skillviewer(`JQUERY`, `제이쿼리를 이용하여 조금 더 빠르고 쉽게 DOM 조작과 이벤트 제어를 할 수 있습니다.`);
-						break;
-
-					case 'react':
-						skillviewer(
-							`REACT`,
-							`리액트에서 사용되는 JSX과 Virtual DOM에 대해서 이해하고있으며 props 와 state를 이용한 개발에대해 학습했습니다.`
-						);
-						break;
-
-					case 'SQL':
-						skillviewer(
-							`SQL`,
-							`SQL을 활용한 데이터베이스 생성과 활용을 할 수 있습니다. 스토어드 프로시저를 비롯한 고급개념으로 더욱 확장중입니다.`
-						);
-						break;
-
-					case 'node':
-						skillviewer(
-							`NODEjs`,
-							`자바스크립트 런타임인 NOde.js를 이용하여 웹 브라우저 외부에서 자바스크립트 개발을 할 수 있습니다. 포트폴리오 목록의 키오스크에 해당 언어를 활용했습니다.`
-						);
-						break;
-
-					case 'php':
-						skillviewer(`PHP`, `서버에서 동작하는 인터프리터방식 언어인 PHP로 데이터베이스 연결이 가능합니다.  `);
-						break;
-
-					case 'photoshop':
-						skillviewer(`PHOTOSHOP`, `포토샵을 이용하여 이미지의 편집과 수정, 그림을 그리는것도 가능합니다.`);
-						break;
-
-					case 'illurst':
-						skillviewer(
-							`ILLUSTRATOR`,
-							`벡터기반 프로그램인 일러스트레이터를 활용할 수 있습니다. 제 블로그의 배경에 그려지는 선 또한 일러스트레이터를 활용했습니다.`
-						);
-						break;
-
-					case 'reset':
-						keyboradBack();
-						break;
+				const skill = skillDescriptions[button.id];
+				if (skill) {
+					skillviewer(skill.title, skill.description);
+				} else if (button.id === 'reset') {
+					keyboradBack();
 				}
 			});
 		});
 	};
-	aboutmyskill();
+
+	aboutMySkills();
+
 	//	포폴영역
 
 	//아이콘 누르면 보이는 포폴들
 
 	const portfolioBook = document.querySelectorAll('.portfolioBook');
 	const portfolioBookClickHandler = (e) => {
-		const portfolioBookId = e.currentTarget.id;
-		portfolioBook.forEach((book) => {
-			if (book.id === portfolioBookId) {
-				book.classList.remove('pickportfolio');
-				book.style = {
-					opacity: '1',
-					visibility: 'visible',
-				};
-			} else {
-				book.classList.add('pickportfolio');
-				book.style = {
-					opacity: '0',
-					visibility: 'hidden',
-				};
-			}
+		const targetId = e.currentTarget.id;
+
+		const allSections = document.querySelectorAll('.aboutportfolio');
+		const targetSections = {
+			eventpageDog: '.aboutportfolio.eventpages',
+			kiosk: '.aboutportfolio.kioskmovie',
+			matrixcalbtn: '.aboutportfolio.matrixclaculator',
+			character: '.aboutportfolio.character',
+			productdetail: '.aboutportfolio.product',
+		};
+
+		document.querySelectorAll('.pickportfolio').forEach((el) => {
+			el.classList.remove('pickportfolio');
 		});
+
+		document.querySelectorAll('.matrixcal, .kiosk, .eventpage, .Character, .productdetail').forEach((el) => {
+			el.classList.add('pickportfolio');
+		});
+
+		if (targetSections[targetId]) {
+			allSections.forEach((section) => {
+				section.style.opacity = '0';
+				section.style.visibility = 'hidden';
+			});
+
+			const targetSection = document.querySelector(targetSections[targetId]);
+			targetSection.style.opacity = '1';
+			targetSection.style.visibility = 'visible';
+		}
 	};
 
 	portfolioBook.forEach((book) => {
@@ -444,27 +448,24 @@ window.onload = () => {
 
 	document.addEventListener('scroll', (e) => {
 		const windowH = window.innerHeight;
-		const bigRestRoom = document.querySelector('.bigRestRoom');
+		const bigRestRoom = document.querySelector('.bigrestRoom');
+
 		const bigRestRoomRect = bigRestRoom.getBoundingClientRect().top;
 
 		if (bigRestRoomRect < windowH) {
-			bigRestRoom.style = {
-				opacity: '1',
-				transform: 'translateY(0rem)',
-			};
+			bigRestRoom.style.opacity = 1;
+			bigRestRoom.style.transform = 'translateY(0)';
 		} else {
-			bigRestRoom.style = {
-				opacity: '0',
-				transform: 'translateY(15rem)',
-			};
+			bigRestRoom.style.opacity = 0;
+			bigRestRoom.style.transform = 'translateY(15rem)';
 		}
 	});
 
 	//ontop
-	const ontop = document.querySelector('.ontop');
+	const reloadButtn = document.querySelector('#reloadbtn');
 	const ontopClick = () => {
 		scrollTo(0, 0);
 	};
-	ontop.addEventListener('click', ontopClick);
+	reloadButtn.addEventListener('click', ontopClick);
 };
 // 닫히는태그
