@@ -76,18 +76,17 @@ window.onload = () => {
 	//스크롤 이벤트//
 
 	//path
+	const calcDashoffset = (scrollYY, element, length) => {
+		const ratio = (scrollYY - element.offsetTop) / element.offsetHeight;
+		const myvalue = length - length * ratio;
+		return myvalue < 0 ? 0 : myvalue > length ? length : myvalue;
+	};
 
 	const portFolio = document.querySelector('.portFolio');
 	const svgpath = document.querySelector('.st0');
 	const pathlenght = svgpath.getTotalLength();
 	svgpath.style.strokeDasharray = pathlenght;
 	svgpath.style.strokeDashoffset = calcDashoffset(window.innerHeight * 0.8, portFolio, pathlenght);
-
-	const calcDashoffset = (scrollYY, element, length) => {
-		const ratio = (scrollYY - element.offsetTop) / element.offsetHeight;
-		const myvalue = length - length * ratio;
-		return myvalue < 0 ? 0 : myvalue > length ? length : myvalue;
-	};
 
 	const scrollpath = () => {
 		const scrollYY = window.scrollY + window.innerHeight * 0.8;
