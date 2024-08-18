@@ -103,6 +103,7 @@ window.onload = () => {
 		const myskill = document.querySelector('.myskill');
 		const protfolios = document.querySelector('.protfolios');
 		const blogfooter = document.querySelector('.blogfooter');
+
 		mymenu.forEach((menuvalue) => {
 			menuvalue.addEventListener('click', (event) => {
 				switch (event.currentTarget.id) {
