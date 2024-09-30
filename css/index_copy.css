@@ -920,23 +920,18 @@ button {
   display: flex;
   padding: 1rem;
   overflow: hidden;
+  back
   -webkit-transition: .5s;
   transition: .5s;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background: url(../img/backimg2.png);
+
   background-position: center;
   background-size: cover;
 }
 
-.onclickviwer .hana_s_info img {
-  -webkit-filter: drop-shadow(-0.5rem 0rem 0rem #5fc0d1);
-          filter: drop-shadow(-0.5rem 0rem 0rem #5fc0d1);
-  position: absolute;
-  display: inline-block;
-  width: 80rem;
-}
+
 
 .onclickviwer .hana_s_info .middle {
   font-size: 1.4rem;
@@ -2707,7 +2702,11 @@ button {
   width: 8rem;
   height: 8rem;
   background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem;
+  padding: 0.9rem;
   margin: 0.5rem;
   -webkit-box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
           box-shadow: inset -1rem 1rem 3rem white, 0.5rem 1rem 3rem #836ba1cb;
@@ -2725,9 +2724,13 @@ button {
 }
 
 .myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key img {
-  width: 5rem;
-  height: 5rem;
+  width: 100%;
   text-align: center;
+  object-fit: cover;
+}
+.myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key#zustand img {
+  width: fit-content;
+  height: 100%;
 }
 
 .myskill .mySkillKeybord--outer--front .skillkeybord--inner .linemain .linemain--key.spacebar {
