@@ -1,0 +1,312 @@
+import { borderRadius, dutationBall, focusDoor } from '@/styles/keyFrames';
+import styled from '@emotion/styled';
+
+const selectMenuList = [
+  {
+    id: 'aboutHana',
+    title: 'About Hana',
+    scrollTarget: 'intro',
+  },
+  {
+    id: 'mySkills',
+    title: 'My Skills',
+    scrollTarget: 'skills',
+  },
+  {
+    id: 'portfolio',
+    title: 'Portfolio',
+    scrollTarget: 'portfolios',
+  },
+  {
+    id: 'contact',
+    title: 'Contact Me',
+    scrollTarget: 'contact',
+  },
+];
+
+export const Door = () => {
+  return (
+    <DoorContainer>
+      {/* title */}
+      <Title>
+        HANA's
+        <br />
+        Room
+      </Title>
+      {/* select menu */}
+      <SelectMenuBox>
+        {selectMenuList.map((menu) => (
+          <div
+            onClick={() => {
+              const target = document.getElementById(menu.scrollTarget);
+              if (target) {
+                window.scrollTo({
+                  top: target.offsetTop,
+                  behavior: 'smooth',
+                });
+              }
+            }}
+            key={menu.id}>
+            {menu.title}
+          </div>
+        ))}
+        <i className="fa-solid fa-angles-down first"></i>
+      </SelectMenuBox>
+
+      <OpenRoom>
+        <div className="bubble" />
+        <div className="bubble" />
+        <div className="bubble" />
+        <MyDoor>
+          <MyDoorIn>
+            <NameCard>
+              <div className="handleOfDoor"></div>
+              <div className="handleOfDoor"></div>
+            </NameCard>
+            <MyDoorHandle>
+              <MyDoorHandleButton>
+                <div className="key"></div>
+              </MyDoorHandleButton>
+            </MyDoorHandle>
+          </MyDoorIn>
+        </MyDoor>
+      </OpenRoom>
+    </DoorContainer>
+  );
+};
+
+const MyDoorHandleButton = styled.div`
+  border: none;
+  transition: 0.5s;
+  width: 7rem;
+  left: 50%;
+  box-shadow: 1rem -1rem 4rem rgba(119, 181, 181, 0.856);
+  border-radius: 1rem;
+  background: rgb(234, 234, 210);
+  height: 7rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+
+  .key {
+    position: absolute;
+    width: 10rem;
+    transition: 1s;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 2rem;
+    box-shadow: -0.5rem -1rem 3rem #546989c1;
+    height: 3rem;
+    background: ivory;
+    display: inline-block;
+    animation: ${focusDoor} 2s infinite reverse;
+  }
+`;
+
+const MyDoorHandle = styled.div`
+  background: #6957ed;
+  width: 32rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 30rem;
+  position: relative;
+  border-radius: 1rem 1rem 15rem 1rem;
+  -webkit-box-shadow: 0rem 0rem 4rem #422eda;
+  box-shadow: 0rem 0rem 4rem #422eda;
+  text-align: center;
+`;
+
+const MyDoor = styled.div`
+  z-index: 100;
+  background: linear-gradient(10deg, #5943ff, #685bcd);
+  width: 45rem;
+  border-radius: 15rem 15rem 1rem 1rem;
+  height: 65rem;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0rem 3rem 8rem rgb(158, 158, 125);
+`;
+
+const MyDoorIn = styled.div`
+  width: 85%;
+  flex-direction: column;
+  height: 90%;
+  background: linear-gradient(30deg, #5943ff, #685bcd);
+  box-shadow: 1rem 0rem 4rem #422eda;
+  border-radius: 14rem 14rem 1rem 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const NameCard = styled.div`
+  background: ivory;
+  box-shadow: 0rem 0rem 5rem rgba(164, 232, 225, 0.659);
+  width: 30rem;
+  height: 17rem;
+  border-radius: 11rem 11rem 1rem 1rem;
+  transform: translateY(0rem);
+  justify-self: flex-start;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .handleOfDoor:nth-child(1) {
+    position: absolute;
+    width: 37rem;
+    height: 50rem;
+    filter: blur(0.5rem);
+    opacity: 0.5;
+    transform: translate(-8rem, 5rem) rotate(5deg);
+    background: linear-gradient(90deg, salmon, yellow);
+    animation: ${borderRadius} 3s linear infinite reverse;
+  }
+
+  .handleOfDoor:nth-child(2) {
+    position: absolute;
+    width: 15rem;
+    border-radius: 2rem;
+    transform: translate(24rem) rotate(50deg);
+    height: 15rem;
+    filter: blur(0.5rem);
+    background-image: linear-gradient(135deg, #6dffaf 10%, #58cffb 100%);
+  }
+`;
+
+const OpenRoom = styled.div`
+  width: 100%;
+  height: 72rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  .bubble {
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+  }
+
+  .bubble:nth-child(1) {
+    background: linear-gradient(salmon, yellow);
+    animation: ${borderRadius} 3s linear infinite reverse;
+    transform: translate(-20rem);
+    box-shadow: 0rem 0rem 10rem rgba(255, 144, 104, 0.525);
+  }
+
+  .bubble:nth-child(2) {
+    background: radial-gradient(circle, violet, rgb(157, 252, 255));
+    width: 60rem;
+    height: 10rem;
+    transform: translate(-10rem, 15rem) rotate(-15deg);
+    border-radius: 2rem;
+    box-shadow: 0rem 0rem 10rem rgb(155, 246, 249);
+  }
+
+  .bubble:nth-child(3) {
+    box-shadow: 0rem 2rem 4rem #c9ffb4;
+    background-image: linear-gradient(135deg, #fff720 10%, #3cd500 100%);
+    height: 8rem;
+    width: 8rem;
+    border-radius: 2rem;
+    transition: 1s;
+    animation: ${dutationBall} 4s ease-in infinite reverse;
+  }
+
+  .bubble:nth-child(4) {
+    font-size: 10rem;
+    width: 30rem;
+    transform: translate(-50rem, 35rem) rotate(60deg);
+    background-image: linear-gradient(90deg, #f5b4ff 10%, #f067b4 100%);
+    text-shadow: 0rem 1rem 3rem #efb4ff85;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+`;
+
+const SelectMenuBox = styled.div`
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 60rem;
+  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  z-index: 10;
+  padding: 1rem;
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.206);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  border: 0.1rem solid white;
+`;
+
+const Title = styled.h1`
+  background: linear-gradient(80deg, #ff7f43 0%, #fcdb7b 100%);
+  letter-spacing: 1rem;
+  font-family: 'GmarketSansMedium';
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-transform: translate(-40rem);
+  transform: translate(-40rem);
+  padding: 5%;
+  font-size: 5rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  position: absolute;
+`;
+
+const DoorContainer = styled.div`
+  width: 100%;
+  height: 72rem;
+  padding-bottom: 20rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+`;
