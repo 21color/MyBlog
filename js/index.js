@@ -45,7 +45,6 @@ window.onload = () => {
 		const mydoor = document.querySelector('.mydoor');
 		const color1 = document.querySelector('.stop3');
 		const mysection = document.querySelectorAll('.mysection');
-		const myinformation = document.querySelector('.myslame');
 		mysection.forEach((mySections) => {
 			mydoorhandleBtn.addEventListener('click', () => {
 				mydoorhandleBtn.setAttribute('data-id', 'swichOn');
