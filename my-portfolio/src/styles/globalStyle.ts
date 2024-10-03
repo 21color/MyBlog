@@ -7,7 +7,6 @@ export const globalStyle = css`
   html, body {
     font-size: 10px;
     width: 100%;
-    height: 100vh;
     color: #4d4637;
     font-family: 'GowunDodum-Regular';
     background: ivory;

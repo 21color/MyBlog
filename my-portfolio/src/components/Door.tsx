@@ -1,42 +1,63 @@
-import { borderRadius, dutationBall, focusDoor } from '@/styles/keyFrames';
+import { borderRadius, dutationBall, focusDoor, scrollPlz } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
 
 const selectMenuList = [
   {
     id: 'aboutHana',
     title: 'About Hana',
-    scrollTarget: 'intro',
+    scrollTarget: '#intro',
   },
   {
     id: 'mySkills',
     title: 'My Skills',
-    scrollTarget: 'skills',
+    scrollTarget: '#skills',
   },
   {
     id: 'portfolio',
     title: 'Portfolio',
-    scrollTarget: 'portfolios',
+    scrollTarget: '#portfolios',
   },
   {
     id: 'contact',
     title: 'Contact Me',
-    scrollTarget: 'contact',
+    scrollTarget: '#contact',
   },
 ];
 
 export const Door = () => {
+  const [visibleTitle, setVisibleTitle] = useState(false);
+  const [visibleDoor, setVisibleDoor] = useState(true);
+  const [visibleSelectMenu, setVisibleSelectMenu] = useState(false);
+  const [openDoor, setOpenDoor] = useState(false);
+
+  const handleOpenDoor = () => {
+    setOpenDoor(true);
+    setTimeout(() => {
+      setVisibleDoor(false);
+      setVisibleSelectMenu(true);
+    }, 1000);
+  };
+
+  // title visible
+  useEffect(() => {
+    setTimeout(() => {
+      setVisibleTitle(true);
+    }, 800);
+  }, []);
+
   return (
     <DoorContainer>
       {/* title */}
-      <Title>
+      <Title visible={visibleTitle}>
         HANA's
         <br />
         Room
       </Title>
       {/* select menu */}
-      <SelectMenuBox>
+      <SelectMenuBox visible={visibleSelectMenu}>
         {selectMenuList.map((menu) => (
-          <div
+          <SelectMenuContent
             onClick={() => {
               const target = document.getElementById(menu.scrollTarget);
               if (target) {
@@ -48,24 +69,24 @@ export const Door = () => {
             }}
             key={menu.id}>
             {menu.title}
-          </div>
+          </SelectMenuContent>
         ))}
-        <i className="fa-solid fa-angles-down first"></i>
+        <ArrowDown className="fa-solid fa-angles-down first"></ArrowDown>
       </SelectMenuBox>
 
       <OpenRoom>
         <div className="bubble" />
         <div className="bubble" />
         <div className="bubble" />
-        <MyDoor>
+        <MyDoor visible={visibleDoor}>
           <MyDoorIn>
             <NameCard>
               <div className="handleOfDoor"></div>
               <div className="handleOfDoor"></div>
             </NameCard>
             <MyDoorHandle>
-              <MyDoorHandleButton>
-                <div className="key"></div>
+              <MyDoorHandleButton openDoor={openDoor}>
+                <div className="key" onClick={handleOpenDoor}></div>
               </MyDoorHandleButton>
             </MyDoorHandle>
           </MyDoorIn>
@@ -75,11 +96,42 @@ export const Door = () => {
   );
 };
 
-const MyDoorHandleButton = styled.div`
+const ArrowDown = styled.i`
+  position: absolute;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 4rem;
+
+  animation: ${scrollPlz} 3s linear infinite reverse;
+  color: #c980ab;
+`;
+
+const SelectMenuContent = styled.span`
+  background: linear-gradient(30deg, #6563f6, #f4d36f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: left;
+  z-index: 100;
+  margin: 1rem;
+  letter-spacing: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: transparent;
+  font-family: 'GmarketSansBold';
+  position: relative;
+`;
+
+const MyDoorHandleButton = styled.div<{ openDoor: boolean }>`
   border: none;
   transition: 0.5s;
   width: 7rem;
-  left: 50%;
+  left: 10%;
+  top: 10%;
   box-shadow: 1rem -1rem 4rem rgba(119, 181, 181, 0.856);
   border-radius: 1rem;
   background: rgb(234, 234, 210);
@@ -94,7 +146,8 @@ const MyDoorHandleButton = styled.div`
     transition: 1s;
     top: 50%;
     left: 100%;
-    transform: translate(-50%, -50%);
+    transform: ${({ openDoor }) =>
+      openDoor ? 'translate(-50%, -30%)  rotate(15deg)' : 'translate(-50%, -50%)'};
     border-radius: 2rem;
     box-shadow: -0.5rem -1rem 3rem #546989c1;
     height: 3rem;
@@ -117,7 +170,7 @@ const MyDoorHandle = styled.div`
   text-align: center;
 `;
 
-const MyDoor = styled.div`
+const MyDoor = styled.div<{ visible: boolean }>`
   z-index: 100;
   background: linear-gradient(10deg, #5943ff, #685bcd);
   width: 45rem;
@@ -125,6 +178,8 @@ const MyDoor = styled.div`
   height: 65rem;
   transition: 1s;
   display: flex;
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.visible ? 1 : 0)};
   align-items: center;
   justify-content: center;
   box-shadow: 0rem 3rem 8rem rgb(158, 158, 125);
@@ -236,7 +291,7 @@ const OpenRoom = styled.div`
   }
 `;
 
-const SelectMenuBox = styled.div`
+const SelectMenuBox = styled.div<{ visible: boolean }>`
   -webkit-transition: 0.5s;
   transition: 0.5s;
   position: absolute;
@@ -250,11 +305,11 @@ const SelectMenuBox = styled.div`
   border-radius: 50%;
   z-index: 10;
   padding: 1rem;
-  visibility: hidden;
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   background: rgba(255, 255, 255, 0.206);
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
-  opacity: 0;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -269,7 +324,7 @@ const SelectMenuBox = styled.div`
   border: 0.1rem solid white;
 `;
 
-const Title = styled.h1`
+const Title = styled.h1<{ visible: boolean }>`
   background: linear-gradient(80deg, #ff7f43 0%, #fcdb7b 100%);
   letter-spacing: 1rem;
   font-family: 'GmarketSansMedium';
@@ -282,7 +337,7 @@ const Title = styled.h1`
   font-size: 5rem;
   -webkit-transition: 1s;
   transition: 1s;
-  opacity: 0;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
   align-self: stretch;
