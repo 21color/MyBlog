@@ -3,7 +3,7 @@ import { borderRadius, scrollPlz2, slame } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
 import { forwardRef } from 'react';
 
-interface IntroduceProps {
+export interface IntroduceProps {
   active: boolean;
 }
 

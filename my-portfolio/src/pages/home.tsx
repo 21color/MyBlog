@@ -1,17 +1,13 @@
 import { Door } from '@/components/Door';
 import { Introduce } from '@/components/Introduce';
 import Layout from '@/components/Layout';
+import { MyCircleSection } from '@/components/MyCircle';
+import { MyFlowerPot } from '@/components/MyFlowerPot';
 import SvgGraphic from '@/components/SvgGraphic';
-import { useActiveSection } from '@/hooks/useActiveSection';
+import { useActiveSection } from '@/entries/hooks/useActiveSection';
+import { calcDashOffset } from '@/entries/utils/calcDashOffset';
 import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
-
-const calcDashOffset = (scrollY: number, element: HTMLElement, length: number) => {
-  if (!element) return 0;
-  const ratio = (scrollY - element.offsetTop) / element.offsetHeight;
-  const myValue = length - length * ratio;
-  return Math.max(0, Math.min(myValue, length));
-};
 
 const Home = () => {
   const layoutRef = useRef<HTMLDivElement>(null);
@@ -59,6 +55,14 @@ const Home = () => {
         <Introduce
           active={showMyCircle[0].show}
           ref={(ele) => (myCircleRefs.current[0] = ele as HTMLDivElement)}
+        />
+        <MyCircleSection
+          active={showMyCircle[1].show}
+          ref={(ele) => (myCircleRefs.current[1] = ele as HTMLDivElement)}
+        />
+        <MyFlowerPot
+          active={showMyCircle[2].show}
+          ref={(ele) => (myCircleRefs.current[2] = ele as HTMLDivElement)}
         />
       </IntroduceContainer>
     </Layout>
