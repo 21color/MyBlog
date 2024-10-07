@@ -130,7 +130,7 @@ export const MySkills = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) 
 
       <Desk openSkill={isShowSkill}>
         {mySkillDescriptionList.map((skill, index) => {
-          if (activeSkill !== '' && activeSkill !== skill.title) return null;
+          if (activeSkill !== skill.title) return null;
           return (
             <SkillDescription key={index}>
               <h1>{skill.title}</h1>
