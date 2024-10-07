@@ -54,6 +54,6 @@ const FlowerPot = styled.div<{ active: boolean }>`
   justify-content: center;
   opacity: ${(props) => (props.active ? 1 : 0)};
   transform: ${(props) =>
-    props.active ? 'translate(20rem, 35rem) ' : 'perspective(60rem) rotateX(40deg);'};
+    props.active ? 'translate(20rem, 35rem)' : 'perspective(60rem) rotateX(40deg)'};
   font-size: 3rem;
 `;
