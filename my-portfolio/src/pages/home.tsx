@@ -4,6 +4,7 @@ import { Introduce } from '@/components/Introduce';
 import Layout from '@/components/Layout';
 import { MyCircleSection } from '@/components/MyCircle';
 import { MyFlowerPot } from '@/components/MyFlowerPot';
+import { MySkills } from '@/components/MySkills';
 import SvgGraphic from '@/components/SvgGraphic';
 import { useActiveSection } from '@/entries/hooks/useActiveSection';
 import { calcDashOffset } from '@/entries/utils/calcDashOffset';
@@ -69,6 +70,10 @@ const Home = () => {
       <Intro
         active={showSection[0].show}
         ref={(ele) => (sectionRefs.current[0] = ele as HTMLDivElement)}
+      />
+      <MySkills
+        active={showSection[1].show}
+        ref={(ele) => (sectionRefs.current[1] = ele as HTMLDivElement)}
       />
     </Layout>
   );
