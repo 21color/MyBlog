@@ -51,7 +51,6 @@ export function useActiveSection() {
 
     myCircleRefs.current.forEach((circle, idx) => {
       if (circle.getBoundingClientRect().top < windowHight) {
-        console.log(idx);
         setShowMyCircle((prev) =>
           prev.map((circle, index) => {
             if (index === idx) {

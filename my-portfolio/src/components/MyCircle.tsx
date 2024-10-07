@@ -43,7 +43,7 @@ const Information = styled.div`
     letter-spacing: 0.5rem;
   }
 
-  p:first-child {
+  p:first-of-type {
     text-indent: 1rem;
   }
 `;

@@ -1,4 +1,5 @@
 import { Door } from '@/components/Door';
+import { Intro } from '@/components/Intro';
 import { Introduce } from '@/components/Introduce';
 import Layout from '@/components/Layout';
 import { MyCircleSection } from '@/components/MyCircle';
@@ -65,6 +66,10 @@ const Home = () => {
           ref={(ele) => (myCircleRefs.current[2] = ele as HTMLDivElement)}
         />
       </IntroduceContainer>
+      <Intro
+        active={showSection[0].show}
+        ref={(ele) => (sectionRefs.current[0] = ele as HTMLDivElement)}
+      />
     </Layout>
   );
 };

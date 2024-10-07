@@ -67,7 +67,7 @@ const Markers = styled.span`
   border-radius: 0.5rem;
   padding: 0.5rem;
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     background: #e99ec4;
   }
 `;

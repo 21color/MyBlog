@@ -212,7 +212,7 @@ const NameCard = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  .handleOfDoor:nth-child(1) {
+  .handleOfDoor:nth-of-type(1) {
     position: absolute;
     width: 37rem;
     height: 50rem;
@@ -223,7 +223,7 @@ const NameCard = styled.div`
     animation: ${borderRadius} 3s linear infinite reverse;
   }
 
-  .handleOfDoor:nth-child(2) {
+  .handleOfDoor:nth-of-type(2) {
     position: absolute;
     width: 15rem;
     border-radius: 2rem;
@@ -253,14 +253,14 @@ const OpenRoom = styled.div`
     position: absolute;
   }
 
-  .bubble:nth-child(1) {
+  .bubble:nth-of-type(1) {
     background: linear-gradient(salmon, yellow);
     animation: ${borderRadius} 3s linear infinite reverse;
     transform: translate(-20rem);
     box-shadow: 0rem 0rem 10rem rgba(255, 144, 104, 0.525);
   }
 
-  .bubble:nth-child(2) {
+  .bubble:nth-of-type(2) {
     background: radial-gradient(circle, violet, rgb(157, 252, 255));
     width: 60rem;
     height: 10rem;
@@ -269,7 +269,7 @@ const OpenRoom = styled.div`
     box-shadow: 0rem 0rem 10rem rgb(155, 246, 249);
   }
 
-  .bubble:nth-child(3) {
+  .bubble:nth-of-type(3) {
     box-shadow: 0rem 2rem 4rem #c9ffb4;
     background-image: linear-gradient(135deg, #fff720 10%, #3cd500 100%);
     height: 8rem;
@@ -279,7 +279,7 @@ const OpenRoom = styled.div`
     animation: ${dutationBall} 4s ease-in infinite reverse;
   }
 
-  .bubble:nth-child(4) {
+  .bubble:nth-of-type(4) {
     font-size: 10rem;
     width: 30rem;
     transform: translate(-50rem, 35rem) rotate(60deg);

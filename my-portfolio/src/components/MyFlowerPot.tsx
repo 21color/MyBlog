@@ -24,10 +24,10 @@ const MyNoteInner = styled.div`
   display: inline-block;
   position: relative;
 
-  &:first-child {
+  &:first-of-type {
     transform: rotate(5deg);
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     transform: rotate(-5deg);
   }
 
