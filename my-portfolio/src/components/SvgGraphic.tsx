@@ -42,7 +42,14 @@ const SvgStyle = styled.svg`
   }
 `;
 
-const SvgGraphic = forwardRef<SVGPathElement>((props, ref) => {
+interface SvgGraphicProps {
+  strokeDashOffset: number;
+  strokeDashArray: number;
+}
+
+const SvgGraphic = forwardRef<SVGPathElement, SvgGraphicProps>((props, ref) => {
+  const { strokeDashOffset, strokeDashArray } = props;
+  
   return (
     <SvgStyle
       {...props}
@@ -65,6 +72,10 @@ const SvgGraphic = forwardRef<SVGPathElement>((props, ref) => {
         </linearGradient>
       </defs>
       <path
+        style={{
+          strokeDashoffset: strokeDashOffset,
+          strokeDasharray: strokeDashArray,
+        }}
         ref={ref}
         className="st0"
         d="M1012.976-0.231
