@@ -428,7 +428,7 @@ const IntroSkills = styled.div`
     content: '\f10d';
     color: #ffbe92;
     position: absolute;
-    font-family: 'font Awesome 6 free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
   }
 
@@ -437,7 +437,7 @@ const IntroSkills = styled.div`
     content: '\f10e';
     color: #ffbe92;
     position: absolute;
-    font-family: 'font Awesome 6 free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
   }
 `;

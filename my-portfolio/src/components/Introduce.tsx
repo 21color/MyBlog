@@ -1,8 +1,9 @@
 import PortfolioImage from '@/assets/portfolio.png';
-import { borderRadius, scrollPlz2, slame } from '@/styles/keyFrames';
+import { scrollPlz2, slame } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef } from 'react';
-
 export interface IntroduceProps {
   active: boolean;
 }
@@ -15,6 +16,12 @@ export const Introduce = forwardRef<HTMLDivElement, IntroduceProps>((props, ref)
       <MyHightCircle ref={ref} active={active}>
         <MyPicture />
         <InfoBox>
+          <FontAwesomeIcon
+            color="#b15a97"
+            style={{ transform: 'translate(-0.5rem)' }}
+            fontSize={'2rem'}
+            icon={faQuoteLeft}
+          />
           <p>어제보다 더 나은 오늘을 만들어가는</p>
           <p>
             병아리 개발자
@@ -30,25 +37,6 @@ export const Introduce = forwardRef<HTMLDivElement, IntroduceProps>((props, ref)
     </>
   );
 });
-
-const myCircle = styled.div`
-  position: absolute;
-  opacity: 0;
-  display: flex;
-
-  animation: ${borderRadius} 3.5s linear infinite alternate;
-
-  align-items: center;
-  transform: translate(0rem, 0rem);
-  -webkit-transition: 2s;
-  transition: 2s;
-  width: 24rem;
-  height: 22rem;
-  align-items: center;
-
-  justify-content: center;
-  padding: 2rem;
-`;
 
 const ArrowDown = styled.i`
   position: absolute;
@@ -84,7 +72,7 @@ const InfoBox = styled.div`
     content: '\f10d';
     color: #b15a97;
     position: absolute;
-    font-family: 'font Awesome 6 free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     transform: translate(-0.5rem);
   }

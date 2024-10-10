@@ -30,7 +30,7 @@ const Information = styled.div`
     content: '\f10e';
     color: #b15a5a;
     position: absolute;
-    font-family: 'font Awesome 6 free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     font-size: 2rem;
     transform: translate(0.5rem);

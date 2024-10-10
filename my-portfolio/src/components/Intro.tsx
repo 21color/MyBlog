@@ -10,6 +10,8 @@ import {
   upDownIcon,
 } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef, useEffect, useState } from 'react';
 import { IntroduceProps } from './Introduce';
 
@@ -49,7 +51,7 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
   }, []);
 
   return (
-    <IntroContainer active={active} data-sa-target="intro" ref={ref}>
+    <IntroContainer active={active} ref={ref}>
       <div>
         {/* mouse start */}
         <MouseChooseInformation isOpenViewer={openViewer}>
@@ -68,7 +70,17 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
       <BigRoom isOpenViewer={openViewer}>
         <OnClickViewer isOpenViewer={openViewer}>
           <HanaInfo>
-            <span className="fa-solid fa-xmark" onClick={() => setOpenViewer(false)}></span>
+            <FontAwesomeIcon
+              style={{
+                left: '2rem',
+                top: '2rem',
+                cursor: 'pointer',
+                position: 'absolute',
+              }}
+              color="#6d83f7"
+              fontSize={'3rem'}
+              icon={faClose}
+              onClick={() => setOpenViewer(false)}></FontAwesomeIcon>
           </HanaInfo>
         </OnClickViewer>
         {/* myRoom Left */}
@@ -631,7 +643,7 @@ const SecondHandStyle = styled.div<{ timeRotate: TimeRotate }>`
 
 const HanaInfo = styled.div`
   position: relative;
-  width: 80rem;
+  width: 60rem;
   background: #ffffff51;
   height: 58rem;
   border-radius: 2rem 1rem 2rem 2rem;
@@ -643,18 +655,10 @@ const HanaInfo = styled.div`
   overflow: hidden;
   transition: 0.5s;
   justify-content: space-evenly;
+  backdrop-filter: blur(0.3rem);
 
   background-position: center;
   background-size: cover;
-
-  span {
-    transform: translate(38rem, 0rem);
-    text-shadow: none;
-    color: #6d83f7;
-    animation: none;
-    font-size: 4rem;
-    cursor: pointer;
-  }
 `;
 
 const MyRoomOnTop = styled.div`
