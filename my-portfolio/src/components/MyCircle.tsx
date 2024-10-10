@@ -1,5 +1,7 @@
 import { borderRadius } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
+import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef } from 'react';
 import { IntroduceProps } from './Introduce';
 
@@ -12,6 +14,12 @@ export const MyCircleSection = forwardRef<HTMLDivElement, IntroduceProps>((props
         <p>제 방을 구경하시면</p>
         <p>저와 조금씩 조금씩</p>
         <p>가까워지실거에요</p>
+        <FontAwesomeIcon
+          color="#b15a5a"
+          style={{ position: 'absolute', transform: 'translate(0.5rem)' }}
+          size="2x"
+          icon={faQuoteRight}
+        />
       </Information>
     </MyCircle>
   );
@@ -24,17 +32,6 @@ const Information = styled.div`
 
   transform: translate(1rem);
   position: absolute;
-
-  &::after {
-    letter-spacing: 0.5rem;
-    content: '\f10e';
-    color: #b15a5a;
-    position: absolute;
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 2rem;
-    transform: translate(0.5rem);
-  }
 
   p {
     display: inline-block;

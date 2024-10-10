@@ -35,7 +35,7 @@ const keyBoardKeyList: KeyBoardKeyList = {
     { key: 'TypeScript', src: TypeScriptSvg, event: true },
     { key: 'Emotion', src: Emotion, event: true },
     { key: 'Vue', src: VueSvg, event: true },
-    { key: 'Sass', src: Sass, event: true },
+    { key: 'SCSS', src: Sass, event: true },
     { key: 'StoryBook', src: StoryBook, event: true },
     { key: '', event: false },
     { key: 'A', event: false },
@@ -76,39 +76,48 @@ const mySkillDescriptionList: MySkillDescription[] = [
   },
   {
     title: 'Vue',
-    description: 'vue 이정도 쓸수있다 설명',
+    description:
+      'Vue.js를 활용하여 컴포넌트 기반의 유연하고 반응형 UI를 설계할 수 있습니다. Vuex를 통해 상태 관리를 효율적으로 처리하고, 다양한 프로젝트에서 복잡한 사용자 인터페이스를 구현할 수 있습니다.',
   },
   {
-    title: 'Sass',
-    description: 'sass 이정도 쓸수있다 설명',
+    title: 'SCSS',
+    description:
+      'SCSS를 사용하여 유지보수와 확장성이 뛰어난 스타일을 작성할 수 있습니다. 중첩 구조와 믹스인, 변수 등을 활용하여 스타일 일관성을 유지하고, 복잡한 스타일도 쉽게 관리할 수 있도록 설계합니다.',
   },
   {
     title: 'StoryBook',
-    description: 'storybook 이정도 쓸수있다 설명',
+    description:
+      'Storybook을 통해 UI 컴포넌트를 독립적으로 개발하고 테스트할 수 있습니다. 디자인 시스템과 UI 컴포넌트의 재사용성을 극대화하여 개발 효율성을 높이고, 팀원들과의 협업을 원활하게 진행합니다.',
   },
   {
     title: 'Next',
-    description: 'next 이정도 쓸수있다 설명',
+    description:
+      'Next.js를 사용해 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 효과적으로 구현하며, 페이지 로딩 속도를 최적화하고 SEO를 향상시킵니다. 다양한 프로젝트에서 최적화된 웹 애플리케이션을 개발할 수 있습니다.',
   },
   {
     title: 'ReactQuery',
-    description: 'reactQuery 이정도 쓸수있다 설명',
+    description:
+      'React Query를 사용하여 비동기 데이터 상태 관리를 쉽게 처리하고, 데이터 캐싱 및 리액티브 데이터 패칭 전략을 통해 API 호출을 최적화합니다. 다양한 애플리케이션에서 데이터 페칭 로직을 간소화하고, 성능을 개선하는 데 기여했습니다.',
   },
   {
     title: 'Vite',
-    description: 'vite 이정도 쓸수있다 설명',
+    description:
+      'Vite를 통해 빠른 개발 환경을 구축하고, 모듈 번들링 최적화 및 HMR(Hot Module Replacement)을 활용해 개발 생산성을 극대화합니다. 다양한 프로젝트에서 Vite 기반의 개발 환경을 설정하고, 효율적인 빌드 프로세스를 관리해왔습니다.',
   },
   {
     title: 'Zustand',
-    description: 'zustand 이정도 쓸수있다 설명',
+    description:
+      'Zustand를 사용하여 가볍고 직관적인 전역 상태 관리를 구현할 수 있습니다. React 애플리케이션에서 간편한 상태 관리를 통해 복잡성을 줄이고, 상태 및 액션 관리의 명확한 분리를 통해 코드의 가독성과 유지보수성을 향상시켰습니다.',
   },
   {
     title: 'AWS',
-    description: 'aws 이정도 쓸수있다 설명',
+    description:
+      'AWS S3와 CloudFront를 사용하여 정적 웹사이트를 배포하고, 글로벌 캐싱을 통해 성능을 최적화할 수 있습니다. CloudFront를 통한 CDN 설정으로 사용자 경험을 개선하고, S3 버킷 정책을 활용한 보안 설정 경험도 보유하고 있습니다.',
   },
   {
     title: 'GithubAction',
-    description: 'githubAction 이정도 쓸수있다 설명',
+    description:
+      'GitHub Actions를 활용하여 CI/CD 파이프라인을 구축하고, 자동화된 테스트 및 배포 환경을 구성해 왔습니다. 워크플로우 파일을 작성하고, 다양한 이벤트 기반 작업을 자동화하여 코드 품질을 유지하고, 배포 속도를 개선했습니다.',
   },
 ];
 
