@@ -1,4 +1,5 @@
 import Name from '@/assets/name.png';
+import { DevFolio } from '@/shared/constants';
 import {
   armWorking,
   borderRadius,
@@ -10,8 +11,6 @@ import {
   upDownIcon,
 } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef, useEffect, useState } from 'react';
 import { IntroduceProps } from './Introduce';
 
@@ -22,6 +21,7 @@ type TimeRotate = {
 };
 
 export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => {
+  const [activeTab, setActiveTab] = useState(0);
   const { active } = props;
   const [openViewer, setOpenViewer] = useState(false);
   const [timeRotate, setTimeRotate] = useState<TimeRotate>({
@@ -69,19 +69,41 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
       <MyRoomOnTop></MyRoomOnTop>
       <BigRoom isOpenViewer={openViewer}>
         <OnClickViewer isOpenViewer={openViewer}>
-          <HanaInfo>
-            <FontAwesomeIcon
-              style={{
-                left: '2rem',
-                top: '2rem',
-                cursor: 'pointer',
-                position: 'absolute',
-              }}
-              color="#6d83f7"
-              fontSize={'3rem'}
-              icon={faClose}
-              onClick={() => setOpenViewer(false)}></FontAwesomeIcon>
-          </HanaInfo>
+          <InfoBrowser>
+            <InfoBrowserHeader>
+              <CircleIcon onClick={() => setOpenViewer(false)}></CircleIcon>
+              <BrowserHeaderTabs>
+                {DevFolio.map((item, idx) => (
+                  <BrowserTab
+                    active={activeTab === idx}
+                    onClick={() => setActiveTab(idx)}
+                    key={idx}>
+                    <p>{item.title}</p>
+                  </BrowserTab>
+                ))}
+              </BrowserHeaderTabs>
+            </InfoBrowserHeader>
+            <InfoBrowserBody>
+              <h1>{DevFolio[activeTab].title}</h1>
+              <DescriptionBanner>{DevFolio[activeTab].description}</DescriptionBanner>
+              <SkillContainer>
+                {DevFolio[activeTab].skills.map((skill, idx) => (
+                  <div key={idx}>
+                    <img src={skill.src} />
+                  </div>
+                ))}
+              </SkillContainer>
+              <ExampleImage>
+                <img src={DevFolio[activeTab].img} />
+              </ExampleImage>
+              <DemoButton
+                onClick={() => {
+                  window.open(DevFolio[activeTab].demo);
+                }}>
+                보러가기
+              </DemoButton>
+            </InfoBrowserBody>
+          </InfoBrowser>
         </OnClickViewer>
         {/* myRoom Left */}
         <MyRoomLeft>
@@ -184,6 +206,150 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
     </IntroContainer>
   );
 });
+
+const SkillContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  div {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div > img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+
+const ExampleImage = styled.div`
+  width: 100%;
+  height: 23rem;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const DemoButton = styled.div`
+  width: 100%;
+  height: 5rem;
+  background: black;
+  border-radius: 1rem;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: 'pretendard';
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+
+  &:hover {
+    background: #e9e9e9;
+  }
+`;
+
+const BrowserTab = styled.div<{ active?: boolean }>`
+  width: fit-content;
+  height: 80%;
+  padding: 0rem 1rem;
+  font-size: 1.1rem;
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+  font-family: 'pretendard';
+  background: ${(props) => (props.active ? '#ffffff8a' : 'transparent')};
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease-in-out;
+
+  p {
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  &:hover > p {
+    background: #ffffff8a;
+  }
+`;
+
+const InfoBrowserHeader = styled.div`
+  height: 5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 2rem;
+`;
+
+const BrowserHeaderTabs = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+`;
+
+const InfoBrowserBody = styled.div`
+  height: 100%;
+  background: #ffffff8a;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  position: relative;
+  font-family: 'pretendard';
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+`;
+
+const DescriptionBanner = styled.div`
+  background: #9cafff6a;
+  padding: 1rem;
+  border-radius: 1rem;
+  word-break: keep-all;
+  color: #447bcf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: 'pretendard';
+  line-height: 2rem;
+`;
+
+const CircleIcon = styled.div`
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #eb584e;
+  border: 0.1rem solid #d3493f;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const KeyPad = styled.div`
   width: 2rem;
@@ -641,20 +807,20 @@ const SecondHandStyle = styled.div<{ timeRotate: TimeRotate }>`
   }
 `;
 
-const HanaInfo = styled.div`
+const InfoBrowser = styled.div`
   position: relative;
   width: 60rem;
-  background: #ffffff51;
+  background: #ffffff7a;
   height: 58rem;
   border-radius: 2rem 1rem 2rem 2rem;
   transform: translate(24rem, 6rem);
   background-position: center;
   box-shadow: -0.5rem 4rem 5rem rgb(128, 109, 109);
   display: flex;
-  padding: 1rem;
+  flex-direction: column;
   overflow: hidden;
   transition: 0.5s;
-  justify-content: space-evenly;
+  overflow-y: auto;
   backdrop-filter: blur(0.3rem);
 
   background-position: center;
@@ -850,10 +1016,11 @@ const MouseChooseInformation = styled.div<{ isOpenViewer: boolean }>`
   animation: ${upDownIcon} 2s infinite reverse;
 
   &::after {
-    content: 'CLICK ME';
+    content: 'PROJECT OPEN';
     position: absolute;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     letter-spacing: 1rem;
+    text-align: center;
     background: #fffff081;
     backdrop-filter: blur(0.5rem);
     font-weight: 900;
@@ -862,8 +1029,8 @@ const MouseChooseInformation = styled.div<{ isOpenViewer: boolean }>`
     color: #fb9044;
     padding: 2rem;
 
-    border-radius: 1rem 10rem 10rem 10rem;
-    transform: rotate(40deg) translate(34rem, 11rem);
+    border-radius: 10rem 10rem 10rem 1rem;
+    transform: rotate(40deg) translate(33rem, -8rem);
   }
 
   .mouseBody {

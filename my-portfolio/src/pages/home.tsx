@@ -9,14 +9,24 @@ import SvgGraphic from '@/components/SvgGraphic';
 import { useActiveSection } from '@/shared/hooks/useActiveSection';
 import { useScrollingPath } from '@/shared/hooks/useScrollingPath';
 import styled from '@emotion/styled';
+import React from 'react';
 
 const Home = () => {
   const { layoutRef, svgPathRef, strokeDashArray, strokeDashOffset } = useScrollingPath();
   const { myCircleRefs, sectionRefs, bigRestRoomRef, showBigRestRoom, showMyCircle, showSection } =
     useActiveSection();
 
-  // 스크롤 할때마다 stroke-dashoffset을 계산하여 path를 그리는 효과를 준다.
-
+  // 공통 로직을 처리하는 함수
+  const renderComponentWithRef = (
+    Component: React.ElementType,
+    ref: React.MutableRefObject<HTMLDivElement[]>,
+    index: number,
+    active: boolean,
+  ) => {
+    return (
+      <Component active={active} ref={(ele: HTMLDivElement) => ele && (ref.current[index] = ele)} />
+    );
+  };
   return (
     <Layout ref={layoutRef}>
       <SvgGraphic
@@ -26,27 +36,12 @@ const Home = () => {
       />
       <Door />
       <IntroduceContainer>
-        <Introduce
-          active={showMyCircle[0].show}
-          ref={(ele) => (myCircleRefs.current[0] = ele as HTMLDivElement)}
-        />
-        <MyCircleSection
-          active={showMyCircle[1].show}
-          ref={(ele) => (myCircleRefs.current[1] = ele as HTMLDivElement)}
-        />
-        <MyFlowerPot
-          active={showMyCircle[2].show}
-          ref={(ele) => (myCircleRefs.current[2] = ele as HTMLDivElement)}
-        />
+        {renderComponentWithRef(Introduce, myCircleRefs, 0, showMyCircle[0].show)}
+        {renderComponentWithRef(MyCircleSection, myCircleRefs, 1, showMyCircle[1].show)}
+        {renderComponentWithRef(MyFlowerPot, myCircleRefs, 2, showMyCircle[2].show)}
       </IntroduceContainer>
-      <Intro
-        active={showSection[0].show}
-        ref={(ele) => (sectionRefs.current[0] = ele as HTMLDivElement)}
-      />
-      <MySkills
-        active={showSection[1].show}
-        ref={(ele) => (sectionRefs.current[1] = ele as HTMLDivElement)}
-      />
+      {renderComponentWithRef(Intro, sectionRefs, 0, showSection[0].show)}
+      {renderComponentWithRef(MySkills, sectionRefs, 1, showSection[1].show)}
     </Layout>
   );
 };
