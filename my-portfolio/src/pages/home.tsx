@@ -13,8 +13,7 @@ import React from 'react';
 
 const Home = () => {
   const { layoutRef, svgPathRef, strokeDashArray, strokeDashOffset } = useScrollingPath();
-  const { myCircleRefs, sectionRefs, bigRestRoomRef, showBigRestRoom, showMyCircle, showSection } =
-    useActiveSection();
+  const { myCircleRefs, sectionRefs, showMyCircle, showSection } = useActiveSection();
 
   // 공통 로직을 처리하는 함수
   const renderComponentWithRef = (
