@@ -1,12 +1,9 @@
-
 import { borderRadius } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
 import { forwardRef, useState } from 'react';
 import { IntroduceProps } from './Introduce';
 
-import { mySkillDescriptionList, keyBoardKeyList } from '@/shared/constants';
-
-
+import { keyBoardKeyList, mySkillDescriptionList } from '@/shared/constants';
 
 export const MySkills = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => {
   const [activeSkill, setActiveSkill] = useState('');
@@ -93,7 +90,7 @@ const Container = styled.div<{ active: boolean }>`
 
 const Desk = styled.div<{ openSkill: boolean }>`
   position: absolute;
-
+  font-family: 'pretendard';
   transition: 0.5s;
   width: ${(props) => (props.openSkill ? '43rem' : '90rem')};
   transform: ${(props) => (props.openSkill ? 'translate(44rem, -9rem)' : 'translate(-9rem)')};
@@ -246,12 +243,12 @@ const LineMainKey = styled.div<{ active: boolean }>`
 `;
 
 const SkillDescription = styled.div`
-  width: 30rem;
+  width: 32rem;
   height: 30rem;
   display: flex;
   align-items: center;
+  line-height: 2rem;
   flex-direction: column;
-  letter-spacing: 0.7rem;
   overflow-wrap: wrap;
   justify-content: space-evenly;
   text-align: left;
@@ -260,14 +257,12 @@ const SkillDescription = styled.div`
     display: inline-block;
     font-size: 3.5rem;
     color: white;
-    font-family: 'GowunDodum-Regular';
     letter-spacing: 0.7rem;
   }
   p {
     font-size: 1.8rem;
     text-shadow: -1rem 1rem 3rem #e38b4c;
     color: white;
-    font-family: 'GowunDodum-Regular';
   }
 `;
 

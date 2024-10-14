@@ -230,7 +230,7 @@ const SkillContainer = styled.div`
 
 const ExampleImage = styled.div`
   width: 100%;
-  height: 23rem;
+  height: 20rem;
   border-radius: 1rem;
   overflow: hidden;
 
@@ -311,7 +311,7 @@ const InfoBrowserBody = styled.div`
   display: flex;
   gap: 2rem;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 2rem;
   position: relative;

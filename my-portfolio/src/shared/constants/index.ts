@@ -1,17 +1,22 @@
+import Expert from '@/assets/4.png';
 import AWSImg from '@/assets/skills/aws-2.svg';
 import Emotion from '@/assets/skills/emotion.png';
 import GithubAction from '@/assets/skills/github-icon.svg';
+import JavaScriptImg from '@/assets/skills/JavaScript_logo_2.svg';
 import NextJs from '@/assets/skills/next-js.svg';
 import ReactQuery from '@/assets/skills/react-query-logo.png';
 import ReactSvg from '@/assets/skills/react.svg';
 import Sass from '@/assets/skills/sass.svg';
 import StoryBook from '@/assets/skills/storybook-icon.svg';
+import Tailwind from '@/assets/skills/tailwind.svg';
 import TypeScriptSvg from '@/assets/skills/Typescript_logo_2020.svg';
 import ViteSvg from '@/assets/skills/vite.svg';
 import VueSvg from '@/assets/skills/vue-svgrepo-com.svg';
 import ZustandImg from '@/assets/skills/zustand.png';
 
 import CartUpsell from '@/assets/1.png';
+import CRMImg from '@/assets/2.png';
+import Ect from '@/assets/3.png';
 
 type Skill = {
   title: string;
@@ -21,6 +26,7 @@ interface IProject {
   title: string;
   description: string;
   skills: Skill[];
+  Contribution: number;
   github?: string;
   img?: string;
   demo: string;
@@ -135,6 +141,7 @@ export const mySkillDescriptionList: MySkillDescription[] = [
 export const DevFolio: IProject[] = [
   {
     title: '구매 상품 추천',
+    Contribution: 100,
     skills: [
       {
         title: 'React',
@@ -172,21 +179,94 @@ export const DevFolio: IProject[] = [
   },
   {
     title: '고객 행동 관리 (CRM)',
-    skills: [],
+    Contribution: 100,
+    skills: [
+      {
+        title: 'React',
+        src: ReactSvg,
+      },
+      {
+        title: 'TypeScript',
+        src: TypeScriptSvg,
+      },
+      {
+        title: 'Emotion',
+        src: Emotion,
+      },
+      {
+        title: 'Vite',
+        src: ViteSvg,
+      },
+      {
+        title: 'react-query',
+        src: ReactQuery,
+      },
+      {
+        title: 'AWS',
+        src: AWSImg,
+      },
+      {
+        title: 'github-action',
+        src: GithubAction,
+      },
+    ],
+    img: CRMImg,
     description:
-      '운영자는 특정 행동 조건을 설정하여 회원을 필터링하고, 필터링된 회원들을 대상으로 SMS, 알림톡 발송 등의 액션을 하여 원하는 대상 회원들에게 구매 전환 등의 행동을 유도할 수 있는 기능',
-    demo: '',
+      '운영자는 특정 행동 조건을 설정하여 회원을 필터링하고, 필터링된 회원들을 대상으로 SMS, 알림톡 발송 등의 액션을 하여 원하는 대상 회원들에게 구매 전환 등의 행동을 유도할 수 있는 기능입니다.',
+    demo: 'https://www.notion.so/CRM-106402af57508010a0cef4f60b6aefaa?pvs=4',
   },
   {
-    title: 'imweb 메인 페이지 리뉴얼',
-    skills: [''],
-    description: 'imweb 메인 페이지 리뉴얼 작업',
-    demo: 'https://imweb.me/',
+    title: 'imweb 전문가 서비스',
+    Contribution: 30,
+    img: Expert,
+    skills: [
+      {
+        title: 'NextJs',
+        src: NextJs,
+      },
+      {
+        title: 'TypeScript',
+        src: TypeScriptSvg,
+      },
+      {
+        title: 'Emotion',
+        src: Emotion,
+      },
+      {
+        title: 'react-query',
+        src: ReactQuery,
+      },
+      {
+        title: 'AWS',
+        src: AWSImg,
+      },
+      {
+        title: 'github-action',
+        src: GithubAction,
+      },
+    ],
+    description: 'imweb 전문가 되기, 전문가 찾기 서비스 프론트엔드 개발의 일부를 담당했습니다.',
+    demo: 'https://imweb.me/expert',
   },
   {
-    title: 'PG 서비스 개발',
-    skills: [''],
-    description: 'PG 서비스 연동 개발',
+    title: '그 외 프로젝트',
+    Contribution: 100,
+    img: Ect,
+    skills: [
+      {
+        title: 'JavaScript',
+        src: JavaScriptImg,
+      },
+      {
+        title: 'Vue',
+        src: VueSvg,
+      },
+      {
+        title: 'Tailwind',
+        src: Tailwind,
+      },
+    ],
+    description: '그 외 다양한 프로젝트에서 프론트엔드 개발을 담당했습니다.',
     demo: '',
   },
 ];
