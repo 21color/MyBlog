@@ -1,4 +1,5 @@
 import { Door } from '@/components/Door';
+import { Footer } from '@/components/Footer';
 import { Intro } from '@/components/Intro';
 import { Introduce } from '@/components/Introduce';
 import Layout from '@/components/Layout';
@@ -41,6 +42,7 @@ const Home = () => {
       </IntroduceContainer>
       {renderComponentWithRef(Intro, sectionRefs, 0, showSection[0].show)}
       {renderComponentWithRef(MySkills, sectionRefs, 1, showSection[1].show)}
+      {renderComponentWithRef(Footer, sectionRefs, 2, showSection[2].show)}
     </Layout>
   );
 };

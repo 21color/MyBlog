@@ -1,5 +1,6 @@
 import Name from '@/assets/name.png';
 import { DevFolio } from '@/shared/constants';
+import useHandleClickOutside from '@/shared/hooks/useHandleClickOutside';
 import {
   armWorking,
   borderRadius,
@@ -11,7 +12,7 @@ import {
   upDownIcon,
 } from '@/styles/keyFrames';
 import styled from '@emotion/styled';
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import { IntroduceProps } from './Introduce';
 
 type TimeRotate = {
@@ -24,11 +25,14 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
   const [activeTab, setActiveTab] = useState(0);
   const { active } = props;
   const [openViewer, setOpenViewer] = useState(false);
+  const onClickRef = useRef<HTMLDivElement>(null);
   const [timeRotate, setTimeRotate] = useState<TimeRotate>({
     hour: 0,
     minute: 0,
     second: 0,
   });
+
+  useHandleClickOutside(onClickRef, () => setOpenViewer(false));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,7 +74,7 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
       <BigRoom isOpenViewer={openViewer}>
         {openViewer && (
           <OnClickViewer>
-            <InfoBrowser>
+            <InfoBrowser ref={onClickRef}>
               <InfoBrowserHeader>
                 <CircleIcon onClick={() => setOpenViewer(false)}></CircleIcon>
                 <BrowserHeaderTabs>
@@ -240,6 +244,7 @@ const ExampleImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 `;
 
@@ -811,7 +816,7 @@ const SecondHandStyle = styled.div<{ timeRotate: TimeRotate }>`
 
 const InfoBrowser = styled.div`
   position: relative;
-  width: 60rem;
+  width: 65rem;
   background: #ffffff7a;
   height: 58rem;
   border-radius: 2rem 1rem 2rem 2rem;

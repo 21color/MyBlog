@@ -4,6 +4,8 @@ import { forwardRef, useState } from 'react';
 import { IntroduceProps } from './Introduce';
 
 import { keyBoardKeyList, mySkillDescriptionList } from '@/shared/constants';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const MySkills = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => {
   const [activeSkill, setActiveSkill] = useState('');
@@ -15,8 +17,20 @@ export const MySkills = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) 
   return (
     <Container active={active} ref={ref}>
       <IntroSkills>
+        <FontAwesomeIcon
+          color="#ffbe92"
+          style={{ position: 'absolute' }}
+          size="2x"
+          icon={faQuoteLeft}
+        />
         <h1>키보드의 키를 눌러보세요.</h1>
         <p>저는 이런것들을 할 수 있답니다.</p>
+        <FontAwesomeIcon
+          color="#ffbe92"
+          style={{ position: 'absolute' }}
+          size="2x"
+          icon={faQuoteRight}
+        />
       </IntroSkills>
 
       <MySkillItem></MySkillItem>

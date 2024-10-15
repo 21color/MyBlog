@@ -13,6 +13,7 @@ import TypeScriptSvg from '@/assets/skills/Typescript_logo_2020.svg';
 import ViteSvg from '@/assets/skills/vite.svg';
 import VueSvg from '@/assets/skills/vue-svgrepo-com.svg';
 import ZustandImg from '@/assets/skills/zustand.png';
+import DsImg from '@/assets/ds.png';
 
 import CartUpsell from '@/assets/1.png';
 import CRMImg from '@/assets/2.png';
@@ -214,6 +215,32 @@ export const DevFolio: IProject[] = [
     description:
       '운영자는 특정 행동 조건을 설정하여 회원을 필터링하고, 필터링된 회원들을 대상으로 SMS, 알림톡 발송 등의 액션을 하여 원하는 대상 회원들에게 구매 전환 등의 행동을 유도할 수 있는 기능입니다.',
     demo: 'https://www.notion.so/CRM-106402af57508010a0cef4f60b6aefaa?pvs=4',
+  },
+  {
+    title: 'Design System',
+    Contribution: 100,
+    img: DsImg,
+    skills: [
+      {
+        title: 'React',
+        src: ReactSvg,
+      },
+      {
+        title: 'TypeScript',
+        src: TypeScriptSvg,
+      },
+      {
+        title: 'Emotion',
+        src: Emotion,
+      },
+      {
+        title: 'StoryBook',
+        src: StoryBook,
+      },
+    ],
+    description:
+      '다양한 프로젝트에서 사용되는 UI 컴포넌트를 Storybook을 활용하여 문서화하고, 재사용성을 높이기 위한 디자인 시스템을 구축했습니다. 지속적으로 업데이트 중입니다',
+    demo: 'https://design-system-ccjidej8a-21colors-projects.vercel.app/',
   },
   {
     title: 'imweb 전문가 서비스',
