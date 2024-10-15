@@ -216,7 +216,7 @@ export const DevFolio: IProject[] = [
     demo: 'https://www.notion.so/CRM-106402af57508010a0cef4f60b6aefaa?pvs=4',
   },
   {
-    title: 'Design System',
+    title: 'LOCAL Design System',
     Contribution: 100,
     img: DsImg,
     skills: [
