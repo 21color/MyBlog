@@ -68,43 +68,45 @@ export const Intro = forwardRef<HTMLDivElement, IntroduceProps>((props, ref) => 
       {/* myRoom start */}
       <MyRoomOnTop></MyRoomOnTop>
       <BigRoom isOpenViewer={openViewer}>
-        <OnClickViewer isOpenViewer={openViewer}>
-          <InfoBrowser>
-            <InfoBrowserHeader>
-              <CircleIcon onClick={() => setOpenViewer(false)}></CircleIcon>
-              <BrowserHeaderTabs>
-                {DevFolio.map((item, idx) => (
-                  <BrowserTab
-                    active={activeTab === idx}
-                    onClick={() => setActiveTab(idx)}
-                    key={idx}>
-                    <p>{item.title}</p>
-                  </BrowserTab>
-                ))}
-              </BrowserHeaderTabs>
-            </InfoBrowserHeader>
-            <InfoBrowserBody>
-              <h1>{DevFolio[activeTab].title}</h1>
-              <DescriptionBanner>{DevFolio[activeTab].description}</DescriptionBanner>
-              <SkillContainer>
-                {DevFolio[activeTab].skills.map((skill, idx) => (
-                  <div key={idx}>
-                    <img src={skill.src} />
-                  </div>
-                ))}
-              </SkillContainer>
-              <ExampleImage>
-                <img src={DevFolio[activeTab].img} />
-              </ExampleImage>
-              <DemoButton
-                onClick={() => {
-                  window.open(DevFolio[activeTab].demo);
-                }}>
-                보러가기
-              </DemoButton>
-            </InfoBrowserBody>
-          </InfoBrowser>
-        </OnClickViewer>
+        {openViewer && (
+          <OnClickViewer>
+            <InfoBrowser>
+              <InfoBrowserHeader>
+                <CircleIcon onClick={() => setOpenViewer(false)}></CircleIcon>
+                <BrowserHeaderTabs>
+                  {DevFolio.map((item, idx) => (
+                    <BrowserTab
+                      active={activeTab === idx}
+                      onClick={() => setActiveTab(idx)}
+                      key={idx}>
+                      <p>{item.title}</p>
+                    </BrowserTab>
+                  ))}
+                </BrowserHeaderTabs>
+              </InfoBrowserHeader>
+              <InfoBrowserBody>
+                <h1>{DevFolio[activeTab].title}</h1>
+                <DescriptionBanner>{DevFolio[activeTab].description}</DescriptionBanner>
+                <SkillContainer>
+                  {DevFolio[activeTab].skills.map((skill, idx) => (
+                    <div key={idx}>
+                      <img src={skill.src} />
+                    </div>
+                  ))}
+                </SkillContainer>
+                <ExampleImage>
+                  <img src={DevFolio[activeTab].img} />
+                </ExampleImage>
+                <DemoButton
+                  onClick={() => {
+                    window.open(DevFolio[activeTab].demo);
+                  }}>
+                  보러가기
+                </DemoButton>
+              </InfoBrowserBody>
+            </InfoBrowser>
+          </OnClickViewer>
+        )}
         {/* myRoom Left */}
         <MyRoomLeft>
           <MyPictureIntro>
@@ -813,13 +815,12 @@ const InfoBrowser = styled.div`
   background: #ffffff7a;
   height: 58rem;
   border-radius: 2rem 1rem 2rem 2rem;
-  transform: translate(24rem, 6rem);
   background-position: center;
   box-shadow: -0.5rem 4rem 5rem rgb(128, 109, 109);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.25s ease-in-out;
   overflow-y: auto;
   backdrop-filter: blur(0.3rem);
 
@@ -845,18 +846,20 @@ const BigRoom = styled.div<{ isOpenViewer: boolean }>`
   background: #f6ff4c;
   background: radial-gradient(circle, #ff8a37 0%, #f6ff4c 100%);
   perspective-origin: top right;
-  transition: 0.5s;
+  transition: 0.25s ease-in-out;
   transform: ${(props) => (props.isOpenViewer ? 'translate(5rem)' : 'translate(12rem)')};
 
   animation: ${borderRadius} 3.5s linear infinite reverse;
 `;
 
-const OnClickViewer = styled.div<{ isOpenViewer: boolean }>`
+const OnClickViewer = styled.div`
   width: 140rem;
   height: 100%;
-  visibility: ${(props) => (props.isOpenViewer ? 'visible' : 'hidden')};
   position: fixed;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const LeftDoorMyPictureIntro = styled.div`
