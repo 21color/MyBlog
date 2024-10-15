@@ -1,4 +1,4 @@
-import Expert from '@/assets/4.png';
+import DsImg from '@/assets/ds.png';
 import AWSImg from '@/assets/skills/aws-2.svg';
 import Emotion from '@/assets/skills/emotion.png';
 import GithubAction from '@/assets/skills/github-icon.svg';
@@ -13,7 +13,6 @@ import TypeScriptSvg from '@/assets/skills/Typescript_logo_2020.svg';
 import ViteSvg from '@/assets/skills/vite.svg';
 import VueSvg from '@/assets/skills/vue-svgrepo-com.svg';
 import ZustandImg from '@/assets/skills/zustand.png';
-import DsImg from '@/assets/ds.png';
 
 import CartUpsell from '@/assets/1.png';
 import CRMImg from '@/assets/2.png';
@@ -242,39 +241,7 @@ export const DevFolio: IProject[] = [
       '다양한 프로젝트에서 사용되는 UI 컴포넌트를 Storybook을 활용하여 문서화하고, 재사용성을 높이기 위한 디자인 시스템을 구축했습니다. 지속적으로 업데이트 중입니다',
     demo: 'https://design-system-ccjidej8a-21colors-projects.vercel.app/',
   },
-  {
-    title: 'imweb 전문가 서비스',
-    Contribution: 30,
-    img: Expert,
-    skills: [
-      {
-        title: 'NextJs',
-        src: NextJs,
-      },
-      {
-        title: 'TypeScript',
-        src: TypeScriptSvg,
-      },
-      {
-        title: 'Emotion',
-        src: Emotion,
-      },
-      {
-        title: 'react-query',
-        src: ReactQuery,
-      },
-      {
-        title: 'AWS',
-        src: AWSImg,
-      },
-      {
-        title: 'github-action',
-        src: GithubAction,
-      },
-    ],
-    description: 'imweb 전문가 되기, 전문가 찾기 서비스 프론트엔드 개발의 일부를 담당했습니다.',
-    demo: 'https://imweb.me/expert',
-  },
+
   {
     title: '그 외 프로젝트',
     Contribution: 100,
@@ -294,6 +261,6 @@ export const DevFolio: IProject[] = [
       },
     ],
     description: '그 외 다양한 프로젝트에서 프론트엔드 개발을 담당했습니다.',
-    demo: '',
+    demo: 'https://www.notion.so/120402af575080499a5ac3824692dbdf?pvs=4',
   },
 ];

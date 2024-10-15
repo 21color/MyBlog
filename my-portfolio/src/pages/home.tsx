@@ -34,7 +34,7 @@ const Home = () => {
         strokeDashOffset={strokeDashOffset}
         ref={svgPathRef}
       />
-      <Door />
+      <Door sectionRefs={sectionRefs} />
       <IntroduceContainer>
         {renderComponentWithRef(Introduce, myCircleRefs, 0, showMyCircle[0].show)}
         {renderComponentWithRef(MyCircleSection, myCircleRefs, 1, showMyCircle[1].show)}

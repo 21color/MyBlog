@@ -4,32 +4,35 @@ import { useEffect, useState } from 'react';
 
 const selectMenuList = [
   {
-    id: 'aboutHana',
-    title: 'About Hana',
-    scrollTarget: '#intro',
+    id: 'Project List',
+    title: 'Project List',
+    scrollTarget: 0,
   },
   {
     id: 'mySkills',
     title: 'My Skills',
-    scrollTarget: '#skills',
-  },
-  {
-    id: 'portfolio',
-    title: 'Portfolio',
-    scrollTarget: '#portfolios',
+    scrollTarget: 1,
   },
   {
     id: 'contact',
     title: 'Contact Me',
-    scrollTarget: '#contact',
+    scrollTarget: 2,
   },
 ];
 
-export const Door = () => {
+interface DoorProps {
+  sectionRefs: React.MutableRefObject<HTMLDivElement[]>;
+}
+
+export const Door = ({ sectionRefs }: DoorProps) => {
   const [visibleTitle, setVisibleTitle] = useState(false);
   const [visibleDoor, setVisibleDoor] = useState(true);
   const [visibleSelectMenu, setVisibleSelectMenu] = useState(false);
   const [openDoor, setOpenDoor] = useState(false);
+
+  const scrollToSection = (index: number) => {
+    sectionRefs.current[index].scrollIntoView({ behavior: 'smooth' });
+  };
 
   const handleOpenDoor = () => {
     setOpenDoor(true);
@@ -59,18 +62,13 @@ export const Door = () => {
         {selectMenuList.map((menu) => (
           <SelectMenuContent
             onClick={() => {
-              const target = document.getElementById(menu.scrollTarget);
-              if (target) {
-                window.scrollTo({
-                  top: target.offsetTop,
-                  behavior: 'smooth',
-                });
-              }
+              scrollToSection(menu.scrollTarget);
             }}
             key={menu.id}>
             {menu.title}
           </SelectMenuContent>
         ))}
+        <p>해당 페이지는 데스크탑 환경에 최적화되어 있습니다.</p>
         <ArrowDown className="fa-solid fa-angles-down first"></ArrowDown>
       </SelectMenuBox>
 
@@ -292,36 +290,32 @@ const OpenRoom = styled.div`
 `;
 
 const SelectMenuBox = styled.div<{ visible: boolean }>`
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   position: absolute;
-  -ms-flex-item-align: center;
   align-self: center;
   width: 60rem;
   height: 60rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
   border-radius: 50%;
   z-index: 10;
   padding: 1rem;
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   background: rgba(255, 255, 255, 0.206);
-  -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
   opacity: ${(props) => (props.visible ? 1 : 0)};
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-line-pack: center;
   align-content: center;
   border: 0.1rem solid white;
+
+  p {
+    font-size: 1.5rem;
+    color: #a495c2;
+
+    letter-spacing: 0.5rem;
+  }
 `;
 
 const Title = styled.h1<{ visible: boolean }>`
