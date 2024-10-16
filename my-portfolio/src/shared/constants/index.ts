@@ -239,7 +239,7 @@ export const DevFolio: IProject[] = [
     ],
     description:
       '다양한 프로젝트에서 사용되는 UI 컴포넌트를 Storybook을 활용하여 문서화하고, 재사용성을 높이기 위한 디자인 시스템을 구축했습니다. 지속적으로 업데이트 중입니다',
-    demo: 'https://design-system-ccjidej8a-21colors-projects.vercel.app/',
+    demo: 'https://design-system-bay.vercel.app/',
   },
 
   {
