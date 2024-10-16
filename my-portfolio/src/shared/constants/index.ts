@@ -175,7 +175,7 @@ export const DevFolio: IProject[] = [
     img: CartUpsell,
     description:
       '장바구니 기능을 강화하기 위해 장바구니에 물건을 담은 회원에게 추가 구매를 유도하는 상품 추천 기능입니다.',
-    demo: 'https://www.notion.so/106402af5750801fa24edda446514065?pvs=4',
+    demo: 'https://synonymous-spider-2c4.notion.site/106402af5750801fa24edda446514065?pvs=74',
   },
   {
     title: '고객 행동 관리 (CRM)',
@@ -213,7 +213,7 @@ export const DevFolio: IProject[] = [
     img: CRMImg,
     description:
       '운영자는 특정 행동 조건을 설정하여 회원을 필터링하고, 필터링된 회원들을 대상으로 SMS, 알림톡 발송 등의 액션을 하여 원하는 대상 회원들에게 구매 전환 등의 행동을 유도할 수 있는 기능입니다.',
-    demo: 'https://www.notion.so/CRM-106402af57508010a0cef4f60b6aefaa?pvs=4',
+    demo: 'https://synonymous-spider-2c4.notion.site/CRM-Beta-106402af57508010a0cef4f60b6aefaa?pvs=25',
   },
   {
     title: 'LOCAL Design System',
@@ -261,6 +261,6 @@ export const DevFolio: IProject[] = [
       },
     ],
     description: '그 외 다양한 프로젝트에서 프론트엔드 개발을 담당했습니다.',
-    demo: 'https://www.notion.so/120402af575080499a5ac3824692dbdf?pvs=4',
+    demo: 'https://synonymous-spider-2c4.notion.site/PG-5f54810be7774b4cb2f8c791599d6f12',
   },
 ];
