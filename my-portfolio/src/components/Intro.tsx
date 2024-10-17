@@ -1075,7 +1075,16 @@ const MouseClickArea = styled.div`
 
   button:first-of-type {
     border-radius: 9rem 15rem 0rem 1rem;
-    animation: ${mouseClickFocus} 1s ease-in-out infinite;
+    animation: ${mouseClickFocus} 1.7s ease-in-out infinite;
+
+    &:hover {
+      transition: 0.25s ease-in-out;
+      background: rgba(255, 255, 240, 0.559);
+      box-shadow:
+        inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.764),
+        2rem -3rem 6rem rgba(174, 234, 240, 0.732);
+      animation: none;
+    }
   }
 
   button:last-child {
