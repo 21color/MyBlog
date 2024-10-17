@@ -27,6 +27,30 @@ export const scrollPlz = keyframes`
   }
 `;
 
+export const mouseClickFocus = keyframes`
+  0% {
+    box-shadow: inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.664);
+  }
+  25% {
+    background: rgba(255, 255, 240, 0.559);
+    box-shadow: 
+    inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.764),
+    2rem -3rem 6rem rgba(174, 234, 240, 0.732);
+  }
+  50% {
+    box-shadow: inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.664);
+  }
+  75% {
+    background: rgba(255, 255, 240, 0.559);
+    box-shadow: 
+    inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.764),
+    2rem -3rem 6rem rgba(174, 234, 240, 0.732);
+  }
+  100% {
+    box-shadow: inset -0.5rem -1rem 3rem rgba(240, 244, 255, 0.664);
+  }
+`;
+
 export const focusDoor = keyframes`
   0% {
     

@@ -8,6 +8,7 @@ import {
   eyeMoving,
   headMoving,
   keyPadNock,
+  mouseClickFocus,
   mouseMoving,
   upDownIcon,
 } from '@/styles/keyFrames';
@@ -1074,6 +1075,7 @@ const MouseClickArea = styled.div`
 
   button:first-of-type {
     border-radius: 9rem 15rem 0rem 1rem;
+    animation: ${mouseClickFocus} 1s ease-in-out infinite;
   }
 
   button:last-child {
