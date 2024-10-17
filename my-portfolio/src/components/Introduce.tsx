@@ -24,7 +24,7 @@ export const Introduce = forwardRef<HTMLDivElement, IntroduceProps>((props, ref)
           />
           <p>어제보다 더 나은 오늘을 만들어가는</p>
           <p>
-            병아리 개발자
+            프론트엔드 개발자
             <Markers>이하나</Markers>
             입니다.
           </p>
